@@ -148,7 +148,9 @@ def test_build_bundle_sorts_and_serializes(sample_response, now, monkeypatch):
         assert f["kickoff_utc"].endswith("Z")
 
 
-def test_build_bundle_returns_empty_without_api_key(now):
+def test_build_bundle_returns_empty_without_api_key(now, monkeypatch):
+    # Without football-data key, only TheSportsDB runs — stub it to return nothing.
+    monkeypatch.setattr("scripts.build_fixtures.requests.get", _stub_tsdb_get({}))
     bundle = build_bundle(now=now, window_days=14, api_key="")
     assert bundle["fixtures"] == []
 
