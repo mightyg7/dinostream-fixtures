@@ -1,0 +1,46 @@
+name: Build fixtures
+
+on:
+  schedule:
+    - cron: "0 6 * * *"   # daily at 06:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+
+      - name: Install deps
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run tests
+        run: pytest -q
+
+      - name: Build fixtures.json
+        run: |
+          python scripts/build_fixtures.py --out docs/fixtures.json --window-days 14
+        continue-on-error: true
+
+      - name: Commit if changed
+        run: |
+          if [[ -n "$(git status --porcelain docs/fixtures.json)" ]]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add docs/fixtures.json
+            git commit -m "chore: refresh fixtures $(date -u +'%Y-%m-%d')"
+            git push
+          else
+            echo "No changes to fixtures.json"
+          fi
