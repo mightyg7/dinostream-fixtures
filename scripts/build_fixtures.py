@@ -1,29 +1,41 @@
-"""Build the DinoStream fixtures JSON from soccerdata sources."""
+"""Build the DinoStream fixtures JSON from football-data.org."""
 
 from __future__ import annotations
 
 import argparse
-import hashlib
 import json
 import logging
-import math
+import os
 import sys
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
-from typing import Iterable, Optional
+from typing import Iterable
 
-import pandas as pd
-import soccerdata as sd
+import requests
 
 
-SEASON_ROLLOVER_MONTH = 8  # August: new season begins
+logger = logging.getLogger(__name__)
+
+
+SEASON_ROLLOVER_MONTH = 8
+
+# football-data.org competition code -> (display name, competition_group)
+COMPETITIONS: dict[str, tuple[str, str]] = {
+    "PL":  ("Premier League",               "big5"),
+    "PD":  ("La Liga",                      "big5"),
+    "BL1": ("Bundesliga",                   "big5"),
+    "SA":  ("Serie A",                      "big5"),
+    "FL1": ("Ligue 1",                      "big5"),
+    "CL":  ("UEFA Champions League",        "cup"),
+    "EL":  ("UEFA Europa League",           "cup"),
+    "WC":  ("FIFA World Cup",               "international"),
+    "EC":  ("UEFA European Championship",   "international"),
+}
+
+API_URL = "https://api.football-data.org/v4/matches"
 
 
 def current_season(now: datetime) -> str:
-    """Return the season string covering `now`, e.g. '2025-2026'.
-
-    August onward = new season starting that year.
-    """
     if now.month >= SEASON_ROLLOVER_MONTH:
         start = now.year
     else:
@@ -31,10 +43,7 @@ def current_season(now: datetime) -> str:
     return f"{start}-{start + 1}"
 
 
-def filter_window(
-    rows: Iterable[dict], now: datetime, window_days: int
-) -> list[dict]:
-    """Keep only rows whose kickoff_utc is in [now, now + window_days]."""
+def filter_window(rows: Iterable[dict], now: datetime, window_days: int) -> list[dict]:
     end = now + timedelta(days=window_days)
     out: list[dict] = []
     for row in rows:
@@ -46,163 +55,126 @@ def filter_window(
     return out
 
 
-def _parse_kickoff(date_str: Optional[str], time_str: Optional[str]) -> Optional[datetime]:
-    """Combine FBref's date+time strings into a UTC datetime, or None if either is missing."""
-    if not date_str or not time_str:
-        return None
-    time_with_seconds = time_str if time_str.count(":") >= 2 else f"{time_str}:00"
-    try:
-        return datetime.fromisoformat(f"{date_str}T{time_with_seconds}").replace(tzinfo=timezone.utc)
-    except (TypeError, ValueError):
-        return None
-
-
-def _is_missing(value) -> bool:
-    if value is None or value == "":
-        return True
-    if isinstance(value, float) and math.isnan(value):
-        return True
-    return False
-
-
-def _fixture_id(raw: dict, competition_group: str) -> str:
-    """Deterministic ID from soccerdata game_id, with hashed fallback."""
-    gid = raw.get("game_id")
-    if gid:
-        return f"fbref-{competition_group}-{gid}"
-    fallback = f"{raw.get('league','')}|{raw.get('season','')}|{raw.get('date','')}|{raw.get('home_team','')}|{raw.get('away_team','')}"
-    digest = hashlib.sha1(fallback.encode("utf-8")).hexdigest()[:12]
-    return f"fbref-{competition_group}-{digest}"
-
-
-def normalize_row(raw: dict, *, competition: str, competition_group: str) -> dict:
-    """Project a soccerdata row dict to the output schema. Optional fields omitted when absent."""
-    kickoff = _parse_kickoff(raw.get("date"), raw.get("time"))
-    out: dict = {
-        "id": _fixture_id(raw, competition_group),
-        "kickoff_utc": kickoff,
-        "competition": competition,
-        "competition_group": competition_group,
-        "season": raw.get("season") or "",
-        "home": raw.get("home_team") or "",
-        "away": raw.get("away_team") or "",
-    }
-    week = raw.get("week")
-    if not _is_missing(week):
-        out["matchday"] = f"Matchday {week}"
-    venue = raw.get("venue")
-    if venue:
-        out["venue"] = venue
-    return out
-
-
-BIG5_LEAGUE_MAP = {
-    "ENG-Premier League": "Premier League",
-    "ESP-La Liga": "La Liga",
-    "GER-Bundesliga": "Bundesliga",
-    "ITA-Serie A": "Serie A",
-    "FRA-Ligue 1": "Ligue 1",
-}
-
-
-logger = logging.getLogger(__name__)
-
-
-CUP_LEAGUE_MAP = {
-    "INT-Champions League": "UEFA Champions League",
-    "INT-Europa League": "UEFA Europa League",
-    "INT-Europa Conference League": "UEFA Conference League",
-}
-
-INTERNATIONAL_LEAGUE_MAP = {
-    "INT-World Cup": "FIFA World Cup",
-    "INT-European Championship": "UEFA European Championship",
-}
-
-
-SOURCES = [
-    ("big5", BIG5_LEAGUE_MAP),
-    ("cup", CUP_LEAGUE_MAP),
-    ("international", INTERNATIONAL_LEAGUE_MAP),
-]
-
-
 def _isoformat_utc(dt: datetime) -> str:
     return dt.astimezone(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 
 
-def build_bundle(*, now: datetime, window_days: int) -> dict:
-    """Run all sources and return the bundle dict ready for JSON serialization.
+def _season_str(season_obj: dict | None) -> str:
+    if not season_obj:
+        return ""
+    start = (season_obj.get("startDate") or "")[:4]
+    end = (season_obj.get("endDate") or "")[:4]
+    if start and end:
+        return f"{start}-{end}"
+    return start or end
 
-    Failure in any single source is logged and skipped; the bundle is still emitted.
+
+def _normalize_match(match: dict) -> dict | None:
+    """Convert one football-data.org match record to our output schema.
+
+    Returns None if the match is missing required fields.
     """
-    season = current_season(now)
-    all_fixtures: list[dict] = []
+    utc = match.get("utcDate")
+    home = (match.get("homeTeam") or {}).get("shortName") or (match.get("homeTeam") or {}).get("name")
+    away = (match.get("awayTeam") or {}).get("shortName") or (match.get("awayTeam") or {}).get("name")
+    comp = match.get("competition") or {}
+    code = comp.get("code")
+    if not utc or not home or not away or not code or code not in COMPETITIONS:
+        return None
+    try:
+        kickoff = datetime.fromisoformat(utc.replace("Z", "+00:00")).astimezone(timezone.utc)
+    except ValueError:
+        return None
 
-    for group, league_map in SOURCES:
-        if not league_map:
-            continue
-        try:
-            rows = fetch_competition(
-                source="fbref",
-                leagues=list(league_map.keys()),
-                season=season,
-                now=now,
-                window_days=window_days,
-                league_to_competition=league_map,
-                competition_group=group,
-            )
-            all_fixtures.extend(rows)
-        except Exception as exc:  # noqa: BLE001
-            logger.warning("source %s failed: %s", group, exc)
+    comp_name, comp_group = COMPETITIONS[code]
+    season_str = _season_str(match.get("season")) or current_season(kickoff)
+    out: dict = {
+        "id": f"fd-{code}-{match.get('id')}",
+        "kickoff_utc": kickoff,
+        "competition": comp_name,
+        "competition_group": comp_group,
+        "season": season_str,
+        "home": home,
+        "away": away,
+    }
+    matchday = match.get("matchday")
+    if matchday is not None:
+        out["matchday"] = f"Matchday {matchday}"
+    return out
 
-    all_fixtures.sort(key=lambda r: r["kickoff_utc"])
-    for r in all_fixtures:
+
+def fetch_matches(
+    *,
+    now: datetime,
+    window_days: int,
+    api_key: str,
+    http_get=None,
+) -> list[dict]:
+    """Hit football-data.org once, normalize matches, filter to window.
+
+    `http_get` is an injection point for tests — defaults to requests.get.
+    """
+    http_get = http_get or requests.get
+
+    date_from = now.date().isoformat()
+    date_to = (now + timedelta(days=window_days)).date().isoformat()
+    params = {
+        "dateFrom": date_from,
+        "dateTo": date_to,
+        "competitions": ",".join(COMPETITIONS.keys()),
+    }
+    headers = {"X-Auth-Token": api_key}
+
+    resp = http_get(API_URL, params=params, headers=headers, timeout=15)
+    if resp.status_code == 403:
+        # The account's plan doesn't include some competitions. Retry with Big-5 + CL only.
+        params["competitions"] = "PL,PD,BL1,SA,FL1,CL"
+        resp = http_get(API_URL, params=params, headers=headers, timeout=15)
+
+    resp.raise_for_status()
+    payload = resp.json()
+    matches = payload.get("matches", [])
+
+    normalized: list[dict] = []
+    for m in matches:
+        row = _normalize_match(m)
+        if row is not None:
+            normalized.append(row)
+
+    return filter_window(normalized, now, window_days)
+
+
+def build_bundle(*, now: datetime, window_days: int, api_key: str | None = None) -> dict:
+    """Top-level orchestrator: fetch, sort, serialize."""
+    key = api_key if api_key is not None else os.environ.get("FOOTBALL_DATA_API_KEY", "")
+    if not key:
+        logger.error("FOOTBALL_DATA_API_KEY is not set — cannot fetch fixtures")
+        return {
+            "generated_at": _isoformat_utc(now),
+            "window_days": window_days,
+            "fixtures": [],
+        }
+
+    try:
+        rows = fetch_matches(now=now, window_days=window_days, api_key=key)
+    except Exception as exc:  # noqa: BLE001
+        logger.warning("football-data.org fetch failed: %s", exc)
+        rows = []
+
+    rows.sort(key=lambda r: r["kickoff_utc"])
+    for r in rows:
         r["kickoff_utc"] = _isoformat_utc(r["kickoff_utc"])
 
     return {
         "generated_at": _isoformat_utc(now),
         "window_days": window_days,
-        "fixtures": all_fixtures,
+        "fixtures": rows,
     }
-
-
-def fetch_competition(
-    *,
-    source: str,
-    leagues: list[str],
-    season: str,
-    now: datetime,
-    window_days: int,
-    league_to_competition: dict[str, str],
-    competition_group: str,
-) -> list[dict]:
-    """Fetch a schedule via soccerdata, normalize, and filter to window.
-
-    Currently supports source='fbref'. Returns a list of dicts in output shape.
-    """
-    if source != "fbref":
-        raise ValueError(f"unsupported source: {source}")
-
-    fbref = sd.FBref(leagues=leagues, seasons=[season])
-    df = fbref.read_schedule()
-    if isinstance(df.index, pd.MultiIndex):
-        df = df.reset_index()
-
-    normalized: list[dict] = []
-    for record in df.to_dict(orient="records"):
-        league = record.get("league")
-        competition = league_to_competition.get(league, league or "Unknown")
-        normalized.append(
-            normalize_row(record, competition=competition, competition_group=competition_group)
-        )
-
-    return filter_window(normalized, now, window_days)
 
 
 def run_cli(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description="Build dinostream fixtures.json")
-    parser.add_argument("--out", type=Path, required=True, help="Output JSON path")
+    parser.add_argument("--out", type=Path, required=True)
     parser.add_argument("--window-days", type=int, default=14)
     args = parser.parse_args(argv)
 
@@ -213,11 +185,7 @@ def run_cli(argv: list[str] | None = None) -> int:
     args.out.parent.mkdir(parents=True, exist_ok=True)
     args.out.write_text(json.dumps(bundle, indent=2) + "\n")
     logger.info("wrote %d fixtures to %s", len(bundle["fixtures"]), args.out)
-
-    if not bundle["fixtures"]:
-        logger.warning("no fixtures emitted — every source failed or returned empty")
-        return 1
-    return 0
+    return 0 if bundle["fixtures"] else 1
 
 
 if __name__ == "__main__":

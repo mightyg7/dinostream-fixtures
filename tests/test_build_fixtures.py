@@ -1,15 +1,12 @@
 import json
 from datetime import datetime, timezone
 from pathlib import Path
+from unittest.mock import MagicMock
 
 import jsonschema
-import pandas as pd
 import pytest
 
-from scripts.build_fixtures import fetch_competition, BIG5_LEAGUE_MAP, build_bundle
-
-
-SAMPLE_CSV = Path(__file__).parent / "data" / "sample_schedule.csv"
+from scripts.build_fixtures import build_bundle, fetch_matches, run_cli, _normalize_match
 
 
 @pytest.fixture
@@ -18,88 +15,151 @@ def now():
 
 
 @pytest.fixture
-def sample_df():
-    return pd.read_csv(SAMPLE_CSV)
+def sample_response():
+    """Mimic football-data.org /v4/matches payload shape."""
+    return {
+        "matches": [
+            {
+                "id": 100,
+                "utcDate": "2026-05-12T19:00:00Z",
+                "status": "SCHEDULED",
+                "matchday": 37,
+                "competition": {"code": "PL", "name": "Premier League"},
+                "season": {"startDate": "2025-08-15", "endDate": "2026-05-24"},
+                "homeTeam": {"name": "Arsenal FC", "shortName": "Arsenal"},
+                "awayTeam": {"name": "Liverpool FC", "shortName": "Liverpool"},
+            },
+            {
+                "id": 101,
+                "utcDate": "2026-05-15T15:00:00Z",
+                "status": "SCHEDULED",
+                "matchday": 38,
+                "competition": {"code": "PD", "name": "La Liga"},
+                "season": {"startDate": "2025-08-15", "endDate": "2026-05-24"},
+                "homeTeam": {"name": "Real Madrid", "shortName": "Real Madrid"},
+                "awayTeam": {"name": "FC Barcelona", "shortName": "Barcelona"},
+            },
+            {
+                "id": 102,
+                "utcDate": "2026-05-10T19:00:00Z",
+                "status": "SCHEDULED",
+                "matchday": 6,
+                "competition": {"code": "CL", "name": "UEFA Champions League"},
+                "season": {"startDate": "2025-09-01", "endDate": "2026-06-01"},
+                "homeTeam": {"name": "Manchester City", "shortName": "Man City"},
+                "awayTeam": {"name": "Bayern Munchen", "shortName": "Bayern"},
+            },
+            {
+                "id": 103,
+                "utcDate": "2026-06-15T19:00:00Z",
+                "status": "SCHEDULED",
+                "competition": {"code": "PL", "name": "Premier League"},
+                "season": {"startDate": "2026-08-15", "endDate": "2027-05-24"},
+                "homeTeam": {"name": "Chelsea", "shortName": "Chelsea"},
+                "awayTeam": {"name": "Tottenham", "shortName": "Spurs"},
+            },
+        ]
+    }
 
 
-def test_fetch_competition_filters_and_normalizes(monkeypatch, sample_df, now):
-    captured = {}
+def _stub_get(sample_response):
+    resp = MagicMock()
+    resp.status_code = 200
+    resp.json.return_value = sample_response
+    resp.raise_for_status.return_value = None
+    def _do_get(url, **kwargs):
+        return resp
+    return _do_get
 
-    def fake_read_schedule(self):
-        captured["leagues"] = self.leagues
-        captured["seasons"] = self.seasons
-        return sample_df
 
-    monkeypatch.setattr("soccerdata.FBref.read_schedule", fake_read_schedule)
+def test_normalize_match_uses_shortname():
+    match = {
+        "id": 1,
+        "utcDate": "2026-05-12T19:00:00Z",
+        "competition": {"code": "PL", "name": "Premier League"},
+        "season": {"startDate": "2025-08-15", "endDate": "2026-05-24"},
+        "homeTeam": {"name": "Arsenal FC", "shortName": "Arsenal"},
+        "awayTeam": {"name": "Liverpool FC", "shortName": "Liverpool"},
+        "matchday": 37,
+    }
+    out = _normalize_match(match)
+    assert out["home"] == "Arsenal"
+    assert out["away"] == "Liverpool"
+    assert out["competition_group"] == "big5"
+    assert out["matchday"] == "Matchday 37"
+    assert out["season"] == "2025-2026"
 
-    rows = fetch_competition(
-        source="fbref",
-        leagues=list(BIG5_LEAGUE_MAP.keys()),
-        season="2025-2026",
+
+def test_normalize_match_returns_none_for_unknown_competition():
+    match = {
+        "id": 1,
+        "utcDate": "2026-05-12T19:00:00Z",
+        "competition": {"code": "ZZZ", "name": "?"},
+        "homeTeam": {"name": "A"},
+        "awayTeam": {"name": "B"},
+    }
+    assert _normalize_match(match) is None
+
+
+def test_normalize_match_returns_none_for_missing_utcdate():
+    match = {
+        "id": 1,
+        "competition": {"code": "PL", "name": "Premier League"},
+        "homeTeam": {"name": "A"},
+        "awayTeam": {"name": "B"},
+    }
+    assert _normalize_match(match) is None
+
+
+def test_fetch_matches_filters_window(sample_response, now):
+    rows = fetch_matches(
         now=now,
         window_days=14,
-        league_to_competition=BIG5_LEAGUE_MAP,
-        competition_group="big5",
+        api_key="dummy",
+        http_get=_stub_get(sample_response),
     )
+    # In-window: PL/Arsenal-Liverpool (May 12), PD/Real-Barca (May 15)
+    # Out-of-window: CL/May 10 (past), PL/June 15 (beyond)
+    homes = {r["home"] for r in rows}
+    assert homes == {"Arsenal", "Real Madrid"}
 
-    assert {r["home"] for r in rows} == {"Arsenal", "Real Madrid"}
-    assert all(r["competition_group"] == "big5" for r in rows)
-    # soccerdata normalises "2025-2026" → "2526" internally
-    assert captured["seasons"] == ["2526"]
 
-
-def test_build_bundle_combines_sources(monkeypatch, sample_df, now):
-    def fake_read_schedule(self):
-        return sample_df
-
-    monkeypatch.setattr("soccerdata.FBref.read_schedule", fake_read_schedule)
-
-    bundle = build_bundle(now=now, window_days=14)
-
+def test_build_bundle_sorts_and_serializes(sample_response, now, monkeypatch):
+    monkeypatch.setattr("scripts.build_fixtures.requests.get", _stub_get(sample_response))
+    bundle = build_bundle(now=now, window_days=14, api_key="dummy")
     assert bundle["window_days"] == 14
     assert bundle["generated_at"].endswith("Z")
-    assert len(bundle["fixtures"]) >= 2  # at least Big-5 in-window rows
-    groups = {f["competition_group"] for f in bundle["fixtures"]}
-    assert groups.issubset({"big5", "cup", "international"})
-
-
-def test_build_bundle_continues_when_a_source_fails(monkeypatch, sample_df, now):
-    call_count = {"n": 0}
-
-    def fake_read_schedule(self):
-        call_count["n"] += 1
-        if call_count["n"] == 2:
-            raise RuntimeError("scraper down")
-        return sample_df
-
-    monkeypatch.setattr("soccerdata.FBref.read_schedule", fake_read_schedule)
-
-    bundle = build_bundle(now=now, window_days=14)
-    assert len(bundle["fixtures"]) >= 1  # bundle still emitted
-
-
-def test_build_bundle_sorts_by_kickoff(monkeypatch, sample_df, now):
-    monkeypatch.setattr("soccerdata.FBref.read_schedule", lambda self: sample_df)
-    bundle = build_bundle(now=now, window_days=14)
     kickoffs = [f["kickoff_utc"] for f in bundle["fixtures"]]
     assert kickoffs == sorted(kickoffs)
+    for f in bundle["fixtures"]:
+        assert f["kickoff_utc"].endswith("Z")
 
 
-def test_cli_writes_validated_json(tmp_path, monkeypatch, sample_df):
-    monkeypatch.setattr("soccerdata.FBref.read_schedule", lambda self: sample_df)
+def test_build_bundle_returns_empty_without_api_key(now):
+    bundle = build_bundle(now=now, window_days=14, api_key="")
+    assert bundle["fixtures"] == []
+
+
+def test_build_bundle_returns_empty_when_fetch_raises(now, monkeypatch):
+    def boom(*a, **kw):
+        raise RuntimeError("network down")
+    monkeypatch.setattr("scripts.build_fixtures.requests.get", boom)
+    bundle = build_bundle(now=now, window_days=14, api_key="dummy")
+    assert bundle["fixtures"] == []
+
+
+def test_cli_writes_validated_json(tmp_path, sample_response, monkeypatch):
+    monkeypatch.setattr("scripts.build_fixtures.requests.get", _stub_get(sample_response))
+    monkeypatch.setenv("FOOTBALL_DATA_API_KEY", "dummy")
     out = tmp_path / "fixtures.json"
-
-    from scripts.build_fixtures import run_cli
 
     rc = run_cli(["--out", str(out), "--window-days", "14"])
     assert rc == 0
-    data = json.loads(out.read_text())
 
+    data = json.loads(out.read_text())
     schema = json.loads(
         (Path(__file__).parent.parent / "schema" / "fixtures.schema.json").read_text()
     )
     jsonschema.validate(data, schema)
-
     assert data["window_days"] == 14
-    assert "generated_at" in data
     assert len(data["fixtures"]) >= 1

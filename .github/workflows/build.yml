@@ -29,6 +29,8 @@ jobs:
         run: pytest -q
 
       - name: Build fixtures.json
+        env:
+          FOOTBALL_DATA_API_KEY: ${{ secrets.FOOTBALL_DATA_API_KEY }}
         run: |
           python scripts/build_fixtures.py --out docs/fixtures.json --window-days 14
         continue-on-error: true
