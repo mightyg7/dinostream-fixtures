@@ -12,6 +12,9 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Iterable, Optional
 
+import pandas as pd
+import soccerdata as sd
+
 
 SEASON_ROLLOVER_MONTH = 8  # August: new season begins
 
@@ -91,10 +94,6 @@ def normalize_row(raw: dict, *, competition: str, competition_group: str) -> dic
     if venue:
         out["venue"] = venue
     return out
-
-
-import soccerdata as sd
-import pandas as pd
 
 
 BIG5_LEAGUE_MAP = {

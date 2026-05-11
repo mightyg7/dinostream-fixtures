@@ -1,6 +1,8 @@
+import json
 from datetime import datetime, timezone
 from pathlib import Path
 
+import jsonschema
 import pandas as pd
 import pytest
 
@@ -84,9 +86,6 @@ def test_build_bundle_sorts_by_kickoff(monkeypatch, sample_df, now):
 
 
 def test_cli_writes_validated_json(tmp_path, monkeypatch, sample_df):
-    import json
-    import jsonschema
-
     monkeypatch.setattr("soccerdata.FBref.read_schedule", lambda self: sample_df)
     out = tmp_path / "fixtures.json"
 
