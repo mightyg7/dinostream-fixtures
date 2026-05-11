@@ -2,8 +2,9 @@
 
 from __future__ import annotations
 
+import hashlib
 from datetime import datetime, timedelta, timezone
-from typing import Iterable
+from typing import Iterable, Optional
 
 
 SEASON_ROLLOVER_MONTH = 8  # August: new season begins
@@ -33,4 +34,45 @@ def filter_window(
             continue
         if now <= ko <= end:
             out.append(row)
+    return out
+
+
+def _parse_kickoff(date_str: Optional[str], time_str: Optional[str]) -> Optional[datetime]:
+    """Combine FBref's date+time strings into a UTC datetime, or None if either is missing."""
+    if not date_str or not time_str:
+        return None
+    try:
+        return datetime.fromisoformat(f"{date_str}T{time_str}:00").replace(tzinfo=timezone.utc)
+    except (TypeError, ValueError):
+        return None
+
+
+def _fixture_id(raw: dict, competition_group: str) -> str:
+    """Deterministic ID from soccerdata game_id, with hashed fallback."""
+    gid = raw.get("game_id")
+    if gid:
+        return f"fbref-{competition_group}-{gid}"
+    fallback = f"{raw.get('league','')}|{raw.get('season','')}|{raw.get('date','')}|{raw.get('home_team','')}|{raw.get('away_team','')}"
+    digest = hashlib.sha1(fallback.encode("utf-8")).hexdigest()[:12]
+    return f"fbref-{competition_group}-{digest}"
+
+
+def normalize_row(raw: dict, *, competition: str, competition_group: str) -> dict:
+    """Project a soccerdata row dict to the output schema. Optional fields omitted when absent."""
+    kickoff = _parse_kickoff(raw.get("date"), raw.get("time"))
+    out: dict = {
+        "id": _fixture_id(raw, competition_group),
+        "kickoff_utc": kickoff,
+        "competition": competition,
+        "competition_group": competition_group,
+        "season": raw.get("season") or "",
+        "home": raw.get("home_team") or "",
+        "away": raw.get("away_team") or "",
+    }
+    week = raw.get("week")
+    if week not in (None, "", float("nan")):
+        out["matchday"] = f"Matchday {week}"
+    venue = raw.get("venue")
+    if venue:
+        out["venue"] = venue
     return out
