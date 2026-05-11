@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "DinoStream fixtures bundle",
+  "type": "object",
+  "required": ["generated_at", "window_days", "fixtures"],
+  "additionalProperties": false,
+  "properties": {
+    "generated_at": { "type": "string", "format": "date-time" },
+    "window_days": { "type": "integer", "minimum": 1 },
+    "fixtures": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "kickoff_utc",
+          "competition",
+          "competition_group",
+          "season",
+          "home",
+          "away"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string", "minLength": 1 },
+          "kickoff_utc": { "type": "string", "format": "date-time" },
+          "competition": { "type": "string", "minLength": 1 },
+          "competition_group": {
+            "type": "string",
+            "enum": ["big5", "cup", "international"]
+          },
+          "season": { "type": "string", "minLength": 1 },
+          "matchday": { "type": "string" },
+          "home": { "type": "string", "minLength": 1 },
+          "away": { "type": "string", "minLength": 1 },
+          "venue": { "type": "string" }
+        }
+      }
+    }
+  }
+}
