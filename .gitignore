@@ -6,3 +6,5 @@ __pycache__/
 soccerdata/
 *.egg-info/
 .DS_Store
+.coverage
+htmlcov/
