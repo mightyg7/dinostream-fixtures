@@ -1,4 +1,4 @@
-"""Build the DinoStream fixtures JSON from football-data.org."""
+"""Build the DinoStream fixtures JSON from football-data.org and TheSportsDB."""
 
 from __future__ import annotations
 
@@ -33,6 +33,13 @@ COMPETITIONS: dict[str, tuple[str, str]] = {
 }
 
 API_BASE = "https://api.football-data.org/v4"
+
+THESPORTSDB_BASE = "https://www.thesportsdb.com/api/v1/json/3"
+
+# TheSportsDB league IDs (UEL verified; UECL not available on free tier)
+THESPORTSDB_LEAGUES: dict[int, tuple[str, str]] = {
+    4481: ("UEFA Europa League", "cup"),
+}
 
 
 def current_season(now: datetime) -> str:
@@ -151,31 +158,113 @@ def fetch_matches(
     return filter_window(normalized, now, window_days)
 
 
+def _parse_thesportsdb_kickoff(timestamp: str | None, date_str: str | None, time_str: str | None) -> datetime | None:
+    """Return a UTC datetime or None."""
+    if timestamp:
+        try:
+            # API sometimes omits tz; treat naive as UTC.
+            dt = datetime.fromisoformat(timestamp.replace("Z", "+00:00"))
+            if dt.tzinfo is None:
+                dt = dt.replace(tzinfo=timezone.utc)
+            return dt.astimezone(timezone.utc)
+        except ValueError:
+            pass
+    if date_str and time_str:
+        try:
+            return datetime.fromisoformat(f"{date_str}T{time_str}").replace(tzinfo=timezone.utc)
+        except ValueError:
+            return None
+    return None
+
+
+def _normalize_thesportsdb_event(ev: dict, *, competition: str, competition_group: str) -> dict | None:
+    kickoff = _parse_thesportsdb_kickoff(ev.get("strTimestamp"), ev.get("dateEvent"), ev.get("strTime"))
+    home = ev.get("strHomeTeam")
+    away = ev.get("strAwayTeam")
+    if not kickoff or not home or not away:
+        return None
+    out: dict = {
+        "id": f"tsdb-{ev.get('idLeague', '')}-{ev.get('idEvent', '')}",
+        "kickoff_utc": kickoff,
+        "competition": competition,
+        "competition_group": competition_group,
+        "season": ev.get("strSeason") or current_season(kickoff),
+        "home": home,
+        "away": away,
+    }
+    rnd = ev.get("intRound")
+    if rnd and str(rnd).strip() not in ("", "0"):
+        out["matchday"] = f"Round {rnd}"
+    return out
+
+
+def fetch_thesportsdb(
+    *,
+    now: datetime,
+    window_days: int,
+    http_get=None,
+) -> list[dict]:
+    """Pull events from TheSportsDB for each league in THESPORTSDB_LEAGUES, normalize, filter to window."""
+    if not THESPORTSDB_LEAGUES:
+        return []
+    http_get = http_get or requests.get
+    rows: list[dict] = []
+    for league_id, (name, group) in THESPORTSDB_LEAGUES.items():
+        url = f"{THESPORTSDB_BASE}/eventsnextleague.php"
+        try:
+            resp = http_get(url, params={"id": league_id}, timeout=15)
+        except Exception as exc:  # noqa: BLE001
+            logger.warning("thesportsdb league %s request failed: %s", league_id, exc)
+            continue
+        if not (200 <= resp.status_code < 300):
+            logger.warning("thesportsdb league %s HTTP %d", league_id, resp.status_code)
+            continue
+        events = (resp.json() or {}).get("events") or []
+        for ev in events:
+            row = _normalize_thesportsdb_event(ev, competition=name, competition_group=group)
+            if row is not None:
+                rows.append(row)
+    return filter_window(rows, now, window_days)
+
+
 def build_bundle(*, now: datetime, window_days: int, api_key: str | None = None) -> dict:
-    """Top-level orchestrator: fetch, sort, serialize."""
+    """Top-level orchestrator: fetch from all sources, dedupe, sort, serialize."""
     key = api_key if api_key is not None else os.environ.get("FOOTBALL_DATA_API_KEY", "")
-    if not key:
-        logger.error("FOOTBALL_DATA_API_KEY is not set — cannot fetch fixtures")
-        return {
-            "generated_at": _isoformat_utc(now),
-            "window_days": window_days,
-            "fixtures": [],
-        }
+    rows: list[dict] = []
+
+    if key:
+        try:
+            rows.extend(fetch_matches(now=now, window_days=window_days, api_key=key))
+        except Exception as exc:  # noqa: BLE001
+            logger.warning("football-data.org fetch failed: %s", exc)
+    else:
+        logger.warning("FOOTBALL_DATA_API_KEY missing — skipping football-data.org")
 
     try:
-        rows = fetch_matches(now=now, window_days=window_days, api_key=key)
+        rows.extend(fetch_thesportsdb(now=now, window_days=window_days))
     except Exception as exc:  # noqa: BLE001
-        logger.warning("football-data.org fetch failed: %s", exc)
-        rows = []
+        logger.warning("thesportsdb fetch failed: %s", exc)
 
-    rows.sort(key=lambda r: r["kickoff_utc"])
+    # Dedupe by (home, away, kickoff date) — same fixture may appear from both sources.
+    seen: set[tuple[str, str, str]] = set()
+    unique: list[dict] = []
     for r in rows:
+        ko = r["kickoff_utc"]
+        date_str = ko.date().isoformat() if hasattr(ko, "date") else str(ko)[:10]
+        key_tup = (r["home"], r["away"], date_str)
+        if key_tup in seen:
+            continue
+        seen.add(key_tup)
+        unique.append(r)
+
+    unique.sort(key=lambda r: r["kickoff_utc"])
+    for r in unique:
         r["kickoff_utc"] = _isoformat_utc(r["kickoff_utc"])
 
     return {
         "generated_at": _isoformat_utc(now),
         "window_days": window_days,
-        "fixtures": rows,
+        "fixtures": unique,
     }
 
 

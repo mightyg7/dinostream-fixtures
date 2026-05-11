@@ -6,7 +6,15 @@ from unittest.mock import MagicMock
 import jsonschema
 import pytest
 
-from scripts.build_fixtures import build_bundle, fetch_matches, run_cli, _normalize_match
+from scripts.build_fixtures import (
+    build_bundle,
+    fetch_matches,
+    run_cli,
+    _normalize_match,
+    _normalize_thesportsdb_event,
+    fetch_thesportsdb,
+    THESPORTSDB_LEAGUES,
+)
 
 
 @pytest.fixture
@@ -168,3 +176,94 @@ def test_cli_writes_validated_json(tmp_path, sample_response, monkeypatch):
     jsonschema.validate(data, schema)
     assert data["window_days"] == 14
     assert len(data["fixtures"]) >= 1
+
+
+# --- TheSportsDB tests ---
+
+
+def _stub_tsdb_get(events_by_league):
+    """events_by_league: {league_id: [event_dict, ...]}"""
+    def _do_get(url, **kwargs):
+        params = kwargs.get("params") or {}
+        league_id = int(params.get("id", -1))
+        events = events_by_league.get(league_id, [])
+        resp = MagicMock()
+        resp.status_code = 200
+        resp.json.return_value = {"events": events}
+        resp.raise_for_status.return_value = None
+        return resp
+    return _do_get
+
+
+def test_normalize_thesportsdb_event_uses_timestamp_and_round():
+    ev = {
+        "idLeague": "4481",
+        "idEvent": "1234567",
+        "strHomeTeam": "Ajax",
+        "strAwayTeam": "Roma",
+        "strTimestamp": "2026-05-15T19:00:00",
+        "intRound": "Quarter-final",
+        "strSeason": "2025-2026",
+    }
+    out = _normalize_thesportsdb_event(ev, competition="UEFA Europa League", competition_group="cup")
+    assert out["home"] == "Ajax"
+    assert out["away"] == "Roma"
+    assert out["competition"] == "UEFA Europa League"
+    assert out["competition_group"] == "cup"
+    assert out["matchday"] == "Round Quarter-final"
+    assert out["id"] == "tsdb-4481-1234567"
+
+
+def test_fetch_thesportsdb_filters_window_and_skips_null(now, monkeypatch):
+    if not THESPORTSDB_LEAGUES:
+        pytest.skip("no TheSportsDB leagues configured")
+    league_id = next(iter(THESPORTSDB_LEAGUES.keys()))
+    events = [
+        {
+            "idLeague": str(league_id), "idEvent": "1",
+            "strHomeTeam": "A", "strAwayTeam": "B",
+            "strTimestamp": "2026-05-13T19:00:00",
+            "strSeason": "2025-2026",
+        },
+        {
+            "idLeague": str(league_id), "idEvent": "2",
+            "strHomeTeam": "C", "strAwayTeam": "D",
+            "strTimestamp": "2026-06-01T19:00:00",  # outside 14-day window
+            "strSeason": "2025-2026",
+        },
+    ]
+    rows = fetch_thesportsdb(now=now, window_days=14, http_get=_stub_tsdb_get({league_id: events}))
+    assert len(rows) == 1
+    assert rows[0]["home"] == "A"
+
+
+def test_build_bundle_dedupes_same_fixture_from_both_sources(now, monkeypatch, sample_response):
+    """A fixture present in both football-data.org and TheSportsDB should appear once."""
+    # Make football-data return Arsenal vs Liverpool on May 12
+    monkeypatch.setattr("scripts.build_fixtures.requests.get", _stub_get(sample_response))
+
+    # Also make TheSportsDB return the same match on the same day
+    if not THESPORTSDB_LEAGUES:
+        pytest.skip("no TheSportsDB leagues configured")
+    league_id = next(iter(THESPORTSDB_LEAGUES.keys()))
+    tsdb_events = [
+        {
+            "idLeague": str(league_id), "idEvent": "999",
+            "strHomeTeam": "Arsenal", "strAwayTeam": "Liverpool",
+            "strTimestamp": "2026-05-12T19:00:00",
+            "strSeason": "2025-2026",
+        }
+    ]
+
+    import scripts.build_fixtures as bf
+    original_fetch_tsdb = bf.fetch_thesportsdb
+
+    def patched_fetch_tsdb(**kwargs):
+        kwargs["http_get"] = _stub_tsdb_get({league_id: tsdb_events})
+        return original_fetch_tsdb(**kwargs)
+
+    monkeypatch.setattr("scripts.build_fixtures.fetch_thesportsdb", patched_fetch_tsdb)
+
+    bundle = build_bundle(now=now, window_days=14, api_key="dummy")
+    arsenal_liverpool = [f for f in bundle["fixtures"] if f["home"] == "Arsenal" and f["away"] == "Liverpool"]
+    assert len(arsenal_liverpool) == 1
