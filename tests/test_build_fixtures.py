@@ -4,7 +4,7 @@ from pathlib import Path
 import pandas as pd
 import pytest
 
-from scripts.build_fixtures import fetch_competition, BIG5_LEAGUE_MAP
+from scripts.build_fixtures import fetch_competition, BIG5_LEAGUE_MAP, build_bundle
 
 
 SAMPLE_CSV = Path(__file__).parent / "data" / "sample_schedule.csv"
@@ -44,3 +44,40 @@ def test_fetch_competition_filters_and_normalizes(monkeypatch, sample_df, now):
     assert all(r["competition_group"] == "big5" for r in rows)
     # soccerdata normalises "2025-2026" → "2526" internally
     assert captured["seasons"] == ["2526"]
+
+
+def test_build_bundle_combines_sources(monkeypatch, sample_df, now):
+    def fake_read_schedule(self):
+        return sample_df
+
+    monkeypatch.setattr("soccerdata.FBref.read_schedule", fake_read_schedule)
+
+    bundle = build_bundle(now=now, window_days=14)
+
+    assert bundle["window_days"] == 14
+    assert bundle["generated_at"].endswith("Z")
+    assert len(bundle["fixtures"]) >= 2  # at least Big-5 in-window rows
+    groups = {f["competition_group"] for f in bundle["fixtures"]}
+    assert groups.issubset({"big5", "cup", "international"})
+
+
+def test_build_bundle_continues_when_a_source_fails(monkeypatch, sample_df, now):
+    call_count = {"n": 0}
+
+    def fake_read_schedule(self):
+        call_count["n"] += 1
+        if call_count["n"] == 2:
+            raise RuntimeError("scraper down")
+        return sample_df
+
+    monkeypatch.setattr("soccerdata.FBref.read_schedule", fake_read_schedule)
+
+    bundle = build_bundle(now=now, window_days=14)
+    assert len(bundle["fixtures"]) >= 1  # bundle still emitted
+
+
+def test_build_bundle_sorts_by_kickoff(monkeypatch, sample_df, now):
+    monkeypatch.setattr("soccerdata.FBref.read_schedule", lambda self: sample_df)
+    bundle = build_bundle(now=now, window_days=14)
+    kickoffs = [f["kickoff_utc"] for f in bundle["fixtures"]]
+    assert kickoffs == sorted(kickoffs)

@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import hashlib
+import logging
 import math
 from datetime import datetime, timedelta, timezone
 from typing import Iterable, Optional
@@ -99,6 +100,68 @@ BIG5_LEAGUE_MAP = {
     "ITA-Serie A": "Serie A",
     "FRA-Ligue 1": "Ligue 1",
 }
+
+
+logger = logging.getLogger(__name__)
+
+
+CUP_LEAGUE_MAP = {
+    "INT-Champions League": "UEFA Champions League",
+    "INT-Europa League": "UEFA Europa League",
+    "INT-Europa Conference League": "UEFA Conference League",
+}
+
+INTERNATIONAL_LEAGUE_MAP = {
+    "INT-World Cup": "FIFA World Cup",
+    "INT-European Championship": "UEFA European Championship",
+}
+
+
+SOURCES = [
+    ("big5", BIG5_LEAGUE_MAP),
+    ("cup", CUP_LEAGUE_MAP),
+    ("international", INTERNATIONAL_LEAGUE_MAP),
+]
+
+
+def _isoformat_utc(dt: datetime) -> str:
+    return dt.astimezone(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+
+
+def build_bundle(*, now: datetime, window_days: int) -> dict:
+    """Run all sources and return the bundle dict ready for JSON serialization.
+
+    Failure in any single source is logged and skipped; the bundle is still emitted.
+    """
+    season = current_season(now)
+    all_fixtures: list[dict] = []
+
+    for group, league_map in SOURCES:
+        if not league_map:
+            continue
+        try:
+            rows = fetch_competition(
+                source="fbref",
+                leagues=list(league_map.keys()),
+                season=season,
+                now=now,
+                window_days=window_days,
+                league_to_competition=league_map,
+                competition_group=group,
+            )
+            all_fixtures.extend(rows)
+        except Exception as exc:  # noqa: BLE001
+            logger.warning("source %s failed: %s", group, exc)
+
+    all_fixtures.sort(key=lambda r: r["kickoff_utc"])
+    for r in all_fixtures:
+        r["kickoff_utc"] = _isoformat_utc(r["kickoff_utc"])
+
+    return {
+        "generated_at": _isoformat_utc(now),
+        "window_days": window_days,
+        "fixtures": all_fixtures,
+    }
 
 
 def fetch_competition(
