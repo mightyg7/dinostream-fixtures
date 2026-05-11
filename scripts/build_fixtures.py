@@ -2,10 +2,14 @@
 
 from __future__ import annotations
 
+import argparse
 import hashlib
+import json
 import logging
 import math
+import sys
 from datetime import datetime, timedelta, timezone
+from pathlib import Path
 from typing import Iterable, Optional
 
 
@@ -195,3 +199,27 @@ def fetch_competition(
         )
 
     return filter_window(normalized, now, window_days)
+
+
+def run_cli(argv: list[str] | None = None) -> int:
+    parser = argparse.ArgumentParser(description="Build dinostream fixtures.json")
+    parser.add_argument("--out", type=Path, required=True, help="Output JSON path")
+    parser.add_argument("--window-days", type=int, default=14)
+    args = parser.parse_args(argv)
+
+    logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
+    now = datetime.now(timezone.utc).replace(microsecond=0)
+    bundle = build_bundle(now=now, window_days=args.window_days)
+
+    args.out.parent.mkdir(parents=True, exist_ok=True)
+    args.out.write_text(json.dumps(bundle, indent=2) + "\n")
+    logger.info("wrote %d fixtures to %s", len(bundle["fixtures"]), args.out)
+
+    if not bundle["fixtures"]:
+        logger.warning("no fixtures emitted — every source failed or returned empty")
+        return 1
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(run_cli())

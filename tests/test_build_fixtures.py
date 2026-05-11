@@ -81,3 +81,26 @@ def test_build_bundle_sorts_by_kickoff(monkeypatch, sample_df, now):
     bundle = build_bundle(now=now, window_days=14)
     kickoffs = [f["kickoff_utc"] for f in bundle["fixtures"]]
     assert kickoffs == sorted(kickoffs)
+
+
+def test_cli_writes_validated_json(tmp_path, monkeypatch, sample_df):
+    import json
+    import jsonschema
+
+    monkeypatch.setattr("soccerdata.FBref.read_schedule", lambda self: sample_df)
+    out = tmp_path / "fixtures.json"
+
+    from scripts.build_fixtures import run_cli
+
+    rc = run_cli(["--out", str(out), "--window-days", "14"])
+    assert rc == 0
+    data = json.loads(out.read_text())
+
+    schema = json.loads(
+        (Path(__file__).parent.parent / "schema" / "fixtures.schema.json").read_text()
+    )
+    jsonschema.validate(data, schema)
+
+    assert data["window_days"] == 14
+    assert "generated_at" in data
+    assert len(data["fixtures"]) >= 1
