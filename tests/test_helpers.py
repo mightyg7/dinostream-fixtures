@@ -123,3 +123,35 @@ def test_normalize_row_generates_stable_id():
     out1 = normalize_row(raw, competition="Premier League", competition_group="big5")
     out2 = normalize_row(raw, competition="Premier League", competition_group="big5")
     assert out1["id"] == out2["id"]
+
+
+import math as _math
+
+
+def test_normalize_row_handles_hhmmss_time():
+    raw = {
+        "game_id": "abc",
+        "date": "2026-05-12",
+        "time": "19:00:00",
+        "home_team": "A",
+        "away_team": "B",
+        "league": "ENG-Premier League",
+        "season": "2025-2026",
+    }
+    out = normalize_row(raw, competition="Premier League", competition_group="big5")
+    assert out["kickoff_utc"] == datetime(2026, 5, 12, 19, 0, tzinfo=timezone.utc)
+
+
+def test_normalize_row_omits_matchday_when_week_is_nan():
+    raw = {
+        "game_id": "abc",
+        "date": "2026-05-12",
+        "time": "19:00",
+        "home_team": "A",
+        "away_team": "B",
+        "week": _math.nan,
+        "league": "ENG-Premier League",
+        "season": "2025-2026",
+    }
+    out = normalize_row(raw, competition="Premier League", competition_group="big5")
+    assert "matchday" not in out

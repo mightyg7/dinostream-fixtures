@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import hashlib
+import math
 from datetime import datetime, timedelta, timezone
 from typing import Iterable, Optional
 
@@ -41,10 +42,19 @@ def _parse_kickoff(date_str: Optional[str], time_str: Optional[str]) -> Optional
     """Combine FBref's date+time strings into a UTC datetime, or None if either is missing."""
     if not date_str or not time_str:
         return None
+    time_with_seconds = time_str if time_str.count(":") >= 2 else f"{time_str}:00"
     try:
-        return datetime.fromisoformat(f"{date_str}T{time_str}:00").replace(tzinfo=timezone.utc)
+        return datetime.fromisoformat(f"{date_str}T{time_with_seconds}").replace(tzinfo=timezone.utc)
     except (TypeError, ValueError):
         return None
+
+
+def _is_missing(value) -> bool:
+    if value is None or value == "":
+        return True
+    if isinstance(value, float) and math.isnan(value):
+        return True
+    return False
 
 
 def _fixture_id(raw: dict, competition_group: str) -> str:
@@ -70,7 +80,7 @@ def normalize_row(raw: dict, *, competition: str, competition_group: str) -> dic
         "away": raw.get("away_team") or "",
     }
     week = raw.get("week")
-    if week not in (None, "", float("nan")):
+    if not _is_missing(week):
         out["matchday"] = f"Matchday {week}"
     venue = raw.get("venue")
     if venue:
