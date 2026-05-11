@@ -32,7 +32,7 @@ COMPETITIONS: dict[str, tuple[str, str]] = {
     "EC":  ("UEFA European Championship",   "international"),
 }
 
-API_URL = "https://api.football-data.org/v4/matches"
+API_BASE = "https://api.football-data.org/v4"
 
 
 def current_season(now: datetime) -> str:
@@ -110,7 +110,11 @@ def fetch_matches(
     api_key: str,
     http_get=None,
 ) -> list[dict]:
-    """Hit football-data.org once, normalize matches, filter to window.
+    """Query football-data.org per-competition, normalize, filter to window.
+
+    Free tier doesn't expose the multi-competition `/v4/matches` filter, so we
+    iterate over each competition's own endpoint and concatenate the results.
+    Competitions outside the user's plan return 403 — we skip those.
 
     `http_get` is an injection point for tests — defaults to requests.get.
     """
@@ -118,24 +122,28 @@ def fetch_matches(
 
     date_from = now.date().isoformat()
     date_to = (now + timedelta(days=window_days)).date().isoformat()
-    params = {
-        "dateFrom": date_from,
-        "dateTo": date_to,
-        "competitions": ",".join(COMPETITIONS.keys()),
-    }
     headers = {"X-Auth-Token": api_key}
 
-    resp = http_get(API_URL, params=params, headers=headers, timeout=15)
-    if resp.status_code in (400, 403):
-        params["competitions"] = "PL,PD,BL1,SA,FL1,CL"
-        resp = http_get(API_URL, params=params, headers=headers, timeout=15)
-
-    resp.raise_for_status()
-    payload = resp.json()
-    matches = payload.get("matches", [])
+    all_matches: list[dict] = []
+    for code in COMPETITIONS:
+        url = f"{API_BASE}/competitions/{code}/matches"
+        params = {"dateFrom": date_from, "dateTo": date_to}
+        try:
+            resp = http_get(url, params=params, headers=headers, timeout=15)
+        except Exception as exc:  # noqa: BLE001
+            logger.warning("competition %s request failed: %s", code, exc)
+            continue
+        if resp.status_code in (400, 403, 404):
+            logger.info("competition %s not available on this plan (%d)", code, resp.status_code)
+            continue
+        if not (200 <= resp.status_code < 300):
+            logger.warning("competition %s HTTP %d", code, resp.status_code)
+            continue
+        payload = resp.json()
+        all_matches.extend(payload.get("matches", []))
 
     normalized: list[dict] = []
-    for m in matches:
+    for m in all_matches:
         row = _normalize_match(m)
         if row is not None:
             normalized.append(row)

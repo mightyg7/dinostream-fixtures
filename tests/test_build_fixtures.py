@@ -63,11 +63,16 @@ def sample_response():
 
 
 def _stub_get(sample_response):
-    resp = MagicMock()
-    resp.status_code = 200
-    resp.json.return_value = sample_response
-    resp.raise_for_status.return_value = None
+    """Dispatch per-competition: each call returns only the matches whose code is in the URL.
+
+    The current build_fixtures hits `/v4/competitions/{CODE}/matches` once per competition.
+    """
     def _do_get(url, **kwargs):
+        matches = [m for m in sample_response["matches"] if f"/competitions/{m['competition']['code']}/matches" in url]
+        resp = MagicMock()
+        resp.status_code = 200
+        resp.json.return_value = {"matches": matches}
+        resp.raise_for_status.return_value = None
         return resp
     return _do_get
 
