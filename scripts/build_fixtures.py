@@ -126,8 +126,7 @@ def fetch_matches(
     headers = {"X-Auth-Token": api_key}
 
     resp = http_get(API_URL, params=params, headers=headers, timeout=15)
-    if resp.status_code == 403:
-        # The account's plan doesn't include some competitions. Retry with Big-5 + CL only.
+    if resp.status_code in (400, 403):
         params["competitions"] = "PL,PD,BL1,SA,FL1,CL"
         resp = http_get(API_URL, params=params, headers=headers, timeout=15)
 
