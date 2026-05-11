@@ -86,3 +86,49 @@ def normalize_row(raw: dict, *, competition: str, competition_group: str) -> dic
     if venue:
         out["venue"] = venue
     return out
+
+
+import soccerdata as sd
+import pandas as pd
+
+
+BIG5_LEAGUE_MAP = {
+    "ENG-Premier League": "Premier League",
+    "ESP-La Liga": "La Liga",
+    "GER-Bundesliga": "Bundesliga",
+    "ITA-Serie A": "Serie A",
+    "FRA-Ligue 1": "Ligue 1",
+}
+
+
+def fetch_competition(
+    *,
+    source: str,
+    leagues: list[str],
+    season: str,
+    now: datetime,
+    window_days: int,
+    league_to_competition: dict[str, str],
+    competition_group: str,
+) -> list[dict]:
+    """Fetch a schedule via soccerdata, normalize, and filter to window.
+
+    Currently supports source='fbref'. Returns a list of dicts in output shape.
+    """
+    if source != "fbref":
+        raise ValueError(f"unsupported source: {source}")
+
+    fbref = sd.FBref(leagues=leagues, seasons=[season])
+    df = fbref.read_schedule()
+    if isinstance(df.index, pd.MultiIndex):
+        df = df.reset_index()
+
+    normalized: list[dict] = []
+    for record in df.to_dict(orient="records"):
+        league = record.get("league")
+        competition = league_to_competition.get(league, league or "Unknown")
+        normalized.append(
+            normalize_row(record, competition=competition, competition_group=competition_group)
+        )
+
+    return filter_window(normalized, now, window_days)

@@ -1,0 +1,5 @@
+game_id,date,time,home_team,away_team,venue,week,league,season
+g1,2026-05-12,19:00,Arsenal,Liverpool,Emirates Stadium,37,ENG-Premier League,2025-2026
+g2,2026-05-15,15:00,Real Madrid,Barcelona,Bernabeu,38,ESP-La Liga,2025-2026
+g3,2026-05-10,17:00,Bayern,Dortmund,Allianz Arena,34,GER-Bundesliga,2025-2026
+g4,2026-05-30,19:00,PSG,Marseille,Parc des Princes,38,FRA-Ligue 1,2025-2026
