@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-11T20:22:29Z",
+  "generated_at": "2026-05-12T08:25:50Z",
   "window_days": 14,
   "fixtures": [
     {
@@ -234,7 +234,7 @@
     },
     {
       "id": "fd-SA-537175",
-      "kickoff_utc": "2026-05-17T00:00:00Z",
+      "kickoff_utc": "2026-05-17T10:30:00Z",
       "competition": "Serie A",
       "competition_group": "big5",
       "season": "2025-2026",
@@ -243,28 +243,8 @@
       "matchday": "Matchday 37"
     },
     {
-      "id": "fd-SA-537176",
-      "kickoff_utc": "2026-05-17T00:00:00Z",
-      "competition": "Serie A",
-      "competition_group": "big5",
-      "season": "2025-2026",
-      "home": "Atalanta",
-      "away": "Bologna",
-      "matchday": "Matchday 37"
-    },
-    {
-      "id": "fd-SA-537177",
-      "kickoff_utc": "2026-05-17T00:00:00Z",
-      "competition": "Serie A",
-      "competition_group": "big5",
-      "season": "2025-2026",
-      "home": "Cagliari",
-      "away": "Torino",
-      "matchday": "Matchday 37"
-    },
-    {
       "id": "fd-SA-537178",
-      "kickoff_utc": "2026-05-17T00:00:00Z",
+      "kickoff_utc": "2026-05-17T10:30:00Z",
       "competition": "Serie A",
       "competition_group": "big5",
       "season": "2025-2026",
@@ -274,7 +254,7 @@
     },
     {
       "id": "fd-SA-537179",
-      "kickoff_utc": "2026-05-17T00:00:00Z",
+      "kickoff_utc": "2026-05-17T10:30:00Z",
       "competition": "Serie A",
       "competition_group": "big5",
       "season": "2025-2026",
@@ -283,18 +263,8 @@
       "matchday": "Matchday 37"
     },
     {
-      "id": "fd-SA-537180",
-      "kickoff_utc": "2026-05-17T00:00:00Z",
-      "competition": "Serie A",
-      "competition_group": "big5",
-      "season": "2025-2026",
-      "home": "Inter",
-      "away": "Verona",
-      "matchday": "Matchday 37"
-    },
-    {
       "id": "fd-SA-537181",
-      "kickoff_utc": "2026-05-17T00:00:00Z",
+      "kickoff_utc": "2026-05-17T10:30:00Z",
       "competition": "Serie A",
       "competition_group": "big5",
       "season": "2025-2026",
@@ -304,32 +274,12 @@
     },
     {
       "id": "fd-SA-537182",
-      "kickoff_utc": "2026-05-17T00:00:00Z",
+      "kickoff_utc": "2026-05-17T10:30:00Z",
       "competition": "Serie A",
       "competition_group": "big5",
       "season": "2025-2026",
       "home": "AC Pisa",
       "away": "Napoli",
-      "matchday": "Matchday 37"
-    },
-    {
-      "id": "fd-SA-537183",
-      "kickoff_utc": "2026-05-17T00:00:00Z",
-      "competition": "Serie A",
-      "competition_group": "big5",
-      "season": "2025-2026",
-      "home": "Sassuolo",
-      "away": "Lecce",
-      "matchday": "Matchday 37"
-    },
-    {
-      "id": "fd-SA-537184",
-      "kickoff_utc": "2026-05-17T00:00:00Z",
-      "competition": "Serie A",
-      "competition_group": "big5",
-      "season": "2025-2026",
-      "home": "Udinese",
-      "away": "Cremonese",
       "matchday": "Matchday 37"
     },
     {
@@ -340,6 +290,16 @@
       "season": "2025-2026",
       "home": "Man United",
       "away": "Nottingham",
+      "matchday": "Matchday 37"
+    },
+    {
+      "id": "fd-SA-537180",
+      "kickoff_utc": "2026-05-17T13:00:00Z",
+      "competition": "Serie A",
+      "competition_group": "big5",
+      "season": "2025-2026",
+      "home": "Inter",
+      "away": "Verona",
       "matchday": "Matchday 37"
     },
     {
@@ -380,6 +340,16 @@
       "season": "2025-2026",
       "home": "Wolverhampton",
       "away": "Fulham",
+      "matchday": "Matchday 37"
+    },
+    {
+      "id": "fd-SA-537176",
+      "kickoff_utc": "2026-05-17T16:00:00Z",
+      "competition": "Serie A",
+      "competition_group": "big5",
+      "season": "2025-2026",
+      "home": "Atalanta",
+      "away": "Bologna",
       "matchday": "Matchday 37"
     },
     {
@@ -490,6 +460,36 @@
       "season": "2025-2026",
       "home": "Sevilla FC",
       "away": "Real Madrid",
+      "matchday": "Matchday 37"
+    },
+    {
+      "id": "fd-SA-537177",
+      "kickoff_utc": "2026-05-17T18:45:00Z",
+      "competition": "Serie A",
+      "competition_group": "big5",
+      "season": "2025-2026",
+      "home": "Cagliari",
+      "away": "Torino",
+      "matchday": "Matchday 37"
+    },
+    {
+      "id": "fd-SA-537183",
+      "kickoff_utc": "2026-05-17T18:45:00Z",
+      "competition": "Serie A",
+      "competition_group": "big5",
+      "season": "2025-2026",
+      "home": "Sassuolo",
+      "away": "Lecce",
+      "matchday": "Matchday 37"
+    },
+    {
+      "id": "fd-SA-537184",
+      "kickoff_utc": "2026-05-17T18:45:00Z",
+      "competition": "Serie A",
+      "competition_group": "big5",
+      "season": "2025-2026",
+      "home": "Udinese",
+      "away": "Cremonese",
       "matchday": "Matchday 37"
     },
     {
@@ -624,7 +624,7 @@
     },
     {
       "id": "fd-PD-544581",
-      "kickoff_utc": "2026-05-24T00:00:00Z",
+      "kickoff_utc": "2026-05-23T19:00:00Z",
       "competition": "La Liga",
       "competition_group": "big5",
       "season": "2025-2026",
@@ -634,7 +634,7 @@
     },
     {
       "id": "fd-PD-544582",
-      "kickoff_utc": "2026-05-24T00:00:00Z",
+      "kickoff_utc": "2026-05-23T19:00:00Z",
       "competition": "La Liga",
       "competition_group": "big5",
       "season": "2025-2026",
@@ -644,7 +644,7 @@
     },
     {
       "id": "fd-PD-544583",
-      "kickoff_utc": "2026-05-24T00:00:00Z",
+      "kickoff_utc": "2026-05-23T19:00:00Z",
       "competition": "La Liga",
       "competition_group": "big5",
       "season": "2025-2026",
@@ -654,7 +654,7 @@
     },
     {
       "id": "fd-PD-544584",
-      "kickoff_utc": "2026-05-24T00:00:00Z",
+      "kickoff_utc": "2026-05-23T19:00:00Z",
       "competition": "La Liga",
       "competition_group": "big5",
       "season": "2025-2026",
@@ -664,7 +664,7 @@
     },
     {
       "id": "fd-PD-544585",
-      "kickoff_utc": "2026-05-24T00:00:00Z",
+      "kickoff_utc": "2026-05-23T19:00:00Z",
       "competition": "La Liga",
       "competition_group": "big5",
       "season": "2025-2026",
@@ -674,7 +674,7 @@
     },
     {
       "id": "fd-PD-544586",
-      "kickoff_utc": "2026-05-24T00:00:00Z",
+      "kickoff_utc": "2026-05-23T19:00:00Z",
       "competition": "La Liga",
       "competition_group": "big5",
       "season": "2025-2026",
@@ -684,12 +684,32 @@
     },
     {
       "id": "fd-PD-544587",
-      "kickoff_utc": "2026-05-24T00:00:00Z",
+      "kickoff_utc": "2026-05-23T19:00:00Z",
       "competition": "La Liga",
       "competition_group": "big5",
       "season": "2025-2026",
       "home": "Real Madrid",
       "away": "Athletic",
+      "matchday": "Matchday 38"
+    },
+    {
+      "id": "fd-PD-544589",
+      "kickoff_utc": "2026-05-23T19:00:00Z",
+      "competition": "La Liga",
+      "competition_group": "big5",
+      "season": "2025-2026",
+      "home": "Valencia",
+      "away": "Bar\u00e7a",
+      "matchday": "Matchday 38"
+    },
+    {
+      "id": "fd-PD-544590",
+      "kickoff_utc": "2026-05-23T19:00:00Z",
+      "competition": "La Liga",
+      "competition_group": "big5",
+      "season": "2025-2026",
+      "home": "Girona",
+      "away": "Elche",
       "matchday": "Matchday 38"
     },
     {
@@ -700,26 +720,6 @@
       "season": "2025-2026",
       "home": "Villarreal",
       "away": "Atleti",
-      "matchday": "Matchday 38"
-    },
-    {
-      "id": "fd-PD-544589",
-      "kickoff_utc": "2026-05-24T00:00:00Z",
-      "competition": "La Liga",
-      "competition_group": "big5",
-      "season": "2025-2026",
-      "home": "Valencia",
-      "away": "Bar\u00e7a",
-      "matchday": "Matchday 38"
-    },
-    {
-      "id": "fd-PD-544590",
-      "kickoff_utc": "2026-05-24T00:00:00Z",
-      "competition": "La Liga",
-      "competition_group": "big5",
-      "season": "2025-2026",
-      "home": "Girona",
-      "away": "Elche",
       "matchday": "Matchday 38"
     },
     {
