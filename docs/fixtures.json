@@ -1,37 +1,7 @@
 {
-  "generated_at": "2026-05-12T08:25:50Z",
+  "generated_at": "2026-05-13T08:34:04Z",
   "window_days": 14,
   "fixtures": [
-    {
-      "id": "fd-PD-544563",
-      "kickoff_utc": "2026-05-12T17:00:00Z",
-      "competition": "La Liga",
-      "competition_group": "big5",
-      "season": "2025-2026",
-      "home": "Celta",
-      "away": "Levante",
-      "matchday": "Matchday 36"
-    },
-    {
-      "id": "fd-PD-544562",
-      "kickoff_utc": "2026-05-12T18:00:00Z",
-      "competition": "La Liga",
-      "competition_group": "big5",
-      "season": "2025-2026",
-      "home": "Real Betis",
-      "away": "Elche",
-      "matchday": "Matchday 36"
-    },
-    {
-      "id": "fd-PD-544567",
-      "kickoff_utc": "2026-05-12T19:30:00Z",
-      "competition": "La Liga",
-      "competition_group": "big5",
-      "season": "2025-2026",
-      "home": "Osasuna",
-      "away": "Atleti",
-      "matchday": "Matchday 36"
-    },
     {
       "id": "fd-PD-544566",
       "kickoff_utc": "2026-05-13T17:00:00Z",
@@ -724,7 +694,7 @@
     },
     {
       "id": "fd-SA-537185",
-      "kickoff_utc": "2026-05-24T00:00:00Z",
+      "kickoff_utc": "2026-05-24T13:00:00Z",
       "competition": "Serie A",
       "competition_group": "big5",
       "season": "2025-2026",
@@ -734,7 +704,7 @@
     },
     {
       "id": "fd-SA-537186",
-      "kickoff_utc": "2026-05-24T00:00:00Z",
+      "kickoff_utc": "2026-05-24T13:00:00Z",
       "competition": "Serie A",
       "competition_group": "big5",
       "season": "2025-2026",
@@ -744,7 +714,7 @@
     },
     {
       "id": "fd-SA-537187",
-      "kickoff_utc": "2026-05-24T00:00:00Z",
+      "kickoff_utc": "2026-05-24T13:00:00Z",
       "competition": "Serie A",
       "competition_group": "big5",
       "season": "2025-2026",
@@ -754,7 +724,7 @@
     },
     {
       "id": "fd-SA-537188",
-      "kickoff_utc": "2026-05-24T00:00:00Z",
+      "kickoff_utc": "2026-05-24T13:00:00Z",
       "competition": "Serie A",
       "competition_group": "big5",
       "season": "2025-2026",
@@ -764,7 +734,7 @@
     },
     {
       "id": "fd-SA-537189",
-      "kickoff_utc": "2026-05-24T00:00:00Z",
+      "kickoff_utc": "2026-05-24T13:00:00Z",
       "competition": "Serie A",
       "competition_group": "big5",
       "season": "2025-2026",
@@ -774,7 +744,7 @@
     },
     {
       "id": "fd-SA-537190",
-      "kickoff_utc": "2026-05-24T00:00:00Z",
+      "kickoff_utc": "2026-05-24T13:00:00Z",
       "competition": "Serie A",
       "competition_group": "big5",
       "season": "2025-2026",
@@ -784,7 +754,7 @@
     },
     {
       "id": "fd-SA-537191",
-      "kickoff_utc": "2026-05-24T00:00:00Z",
+      "kickoff_utc": "2026-05-24T13:00:00Z",
       "competition": "Serie A",
       "competition_group": "big5",
       "season": "2025-2026",
@@ -794,7 +764,7 @@
     },
     {
       "id": "fd-SA-537192",
-      "kickoff_utc": "2026-05-24T00:00:00Z",
+      "kickoff_utc": "2026-05-24T13:00:00Z",
       "competition": "Serie A",
       "competition_group": "big5",
       "season": "2025-2026",
@@ -804,7 +774,7 @@
     },
     {
       "id": "fd-SA-537193",
-      "kickoff_utc": "2026-05-24T00:00:00Z",
+      "kickoff_utc": "2026-05-24T13:00:00Z",
       "competition": "Serie A",
       "competition_group": "big5",
       "season": "2025-2026",
@@ -814,7 +784,7 @@
     },
     {
       "id": "fd-SA-537194",
-      "kickoff_utc": "2026-05-24T00:00:00Z",
+      "kickoff_utc": "2026-05-24T13:00:00Z",
       "competition": "Serie A",
       "competition_group": "big5",
       "season": "2025-2026",
