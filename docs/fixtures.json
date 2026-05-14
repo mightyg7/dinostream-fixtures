@@ -1,77 +1,7 @@
 {
-  "generated_at": "2026-05-13T08:34:04Z",
+  "generated_at": "2026-05-14T08:27:38Z",
   "window_days": 14,
   "fixtures": [
-    {
-      "id": "fd-PD-544566",
-      "kickoff_utc": "2026-05-13T17:00:00Z",
-      "competition": "La Liga",
-      "competition_group": "big5",
-      "season": "2025-2026",
-      "home": "Espanyol",
-      "away": "Athletic",
-      "matchday": "Matchday 36"
-    },
-    {
-      "id": "fd-PD-544569",
-      "kickoff_utc": "2026-05-13T17:00:00Z",
-      "competition": "La Liga",
-      "competition_group": "big5",
-      "season": "2025-2026",
-      "home": "Villarreal",
-      "away": "Sevilla FC",
-      "matchday": "Matchday 36"
-    },
-    {
-      "id": "fd-FL1-542665",
-      "kickoff_utc": "2026-05-13T17:00:00Z",
-      "competition": "Ligue 1",
-      "competition_group": "big5",
-      "season": "2025-2026",
-      "home": "Brest",
-      "away": "Strasbourg",
-      "matchday": "Matchday 29"
-    },
-    {
-      "id": "fd-PL-538091",
-      "kickoff_utc": "2026-05-13T19:00:00Z",
-      "competition": "Premier League",
-      "competition_group": "big5",
-      "season": "2025-2026",
-      "home": "Man City",
-      "away": "Crystal Palace",
-      "matchday": "Matchday 31"
-    },
-    {
-      "id": "fd-FL1-542664",
-      "kickoff_utc": "2026-05-13T19:00:00Z",
-      "competition": "Ligue 1",
-      "competition_group": "big5",
-      "season": "2025-2026",
-      "home": "RC Lens",
-      "away": "PSG",
-      "matchday": "Matchday 29"
-    },
-    {
-      "id": "fd-PD-544561",
-      "kickoff_utc": "2026-05-13T19:30:00Z",
-      "competition": "La Liga",
-      "competition_group": "big5",
-      "season": "2025-2026",
-      "home": "Alav\u00e9s",
-      "away": "Bar\u00e7a",
-      "matchday": "Matchday 36"
-    },
-    {
-      "id": "fd-PD-544564",
-      "kickoff_utc": "2026-05-13T19:30:00Z",
-      "competition": "La Liga",
-      "competition_group": "big5",
-      "season": "2025-2026",
-      "home": "Getafe",
-      "away": "Mallorca",
-      "matchday": "Matchday 36"
-    },
     {
       "id": "fd-PD-544568",
       "kickoff_utc": "2026-05-14T17:00:00Z",
