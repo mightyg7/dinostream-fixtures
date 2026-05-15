@@ -1,37 +1,7 @@
 {
-  "generated_at": "2026-05-14T08:27:38Z",
+  "generated_at": "2026-05-15T08:38:53Z",
   "window_days": 14,
   "fixtures": [
-    {
-      "id": "fd-PD-544568",
-      "kickoff_utc": "2026-05-14T17:00:00Z",
-      "competition": "La Liga",
-      "competition_group": "big5",
-      "season": "2025-2026",
-      "home": "Valencia",
-      "away": "Rayo Vallecano",
-      "matchday": "Matchday 36"
-    },
-    {
-      "id": "fd-PD-544565",
-      "kickoff_utc": "2026-05-14T18:00:00Z",
-      "competition": "La Liga",
-      "competition_group": "big5",
-      "season": "2025-2026",
-      "home": "Girona",
-      "away": "Real Sociedad",
-      "matchday": "Matchday 36"
-    },
-    {
-      "id": "fd-PD-544570",
-      "kickoff_utc": "2026-05-14T19:30:00Z",
-      "competition": "La Liga",
-      "competition_group": "big5",
-      "season": "2025-2026",
-      "home": "Real Madrid",
-      "away": "Real Oviedo",
-      "matchday": "Matchday 36"
-    },
     {
       "id": "fd-PL-538146",
       "kickoff_utc": "2026-05-15T19:00:00Z",
@@ -613,16 +583,6 @@
       "matchday": "Matchday 38"
     },
     {
-      "id": "fd-PD-544588",
-      "kickoff_utc": "2026-05-24T00:00:00Z",
-      "competition": "La Liga",
-      "competition_group": "big5",
-      "season": "2025-2026",
-      "home": "Villarreal",
-      "away": "Atleti",
-      "matchday": "Matchday 38"
-    },
-    {
       "id": "fd-SA-537185",
       "kickoff_utc": "2026-05-24T13:00:00Z",
       "competition": "Serie A",
@@ -820,6 +780,16 @@
       "season": "2025-2026",
       "home": "West Ham",
       "away": "Leeds United",
+      "matchday": "Matchday 38"
+    },
+    {
+      "id": "fd-PD-544588",
+      "kickoff_utc": "2026-05-24T19:00:00Z",
+      "competition": "La Liga",
+      "competition_group": "big5",
+      "season": "2025-2026",
+      "home": "Villarreal",
+      "away": "Atleti",
       "matchday": "Matchday 38"
     }
   ]
