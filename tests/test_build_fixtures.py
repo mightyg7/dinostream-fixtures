@@ -163,9 +163,19 @@ def test_build_bundle_returns_empty_when_fetch_raises(now, monkeypatch):
     assert bundle["fixtures"] == []
 
 
-def test_cli_writes_validated_json(tmp_path, sample_response, monkeypatch):
+def test_cli_writes_validated_json(tmp_path, sample_response, monkeypatch, now):
     monkeypatch.setattr("scripts.build_fixtures.requests.get", _stub_get(sample_response))
     monkeypatch.setenv("FOOTBALL_DATA_API_KEY", "dummy")
+
+    # Pin run_cli's "now" so the window includes sample_response fixtures
+    # regardless of wall clock.
+    class _FixedDatetime(datetime):
+        @classmethod
+        def now(cls, tz=None):
+            return now
+
+    monkeypatch.setattr("scripts.build_fixtures.datetime", _FixedDatetime)
+
     out = tmp_path / "fixtures.json"
 
     rc = run_cli(["--out", str(out), "--window-days", "14"])
