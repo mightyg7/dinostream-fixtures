@@ -1,16 +1,7 @@
 {
-  "generated_at": "2026-05-30T08:16:20Z",
+  "generated_at": "2026-05-31T08:34:20Z",
   "window_days": 14,
   "fixtures": [
-    {
-      "id": "fd-CL-552096",
-      "kickoff_utc": "2026-05-30T16:00:00Z",
-      "competition": "UEFA Champions League",
-      "competition_group": "cup",
-      "season": "2025-2026",
-      "home": "PSG",
-      "away": "Arsenal"
-    },
     {
       "id": "fd-WC-537327",
       "kickoff_utc": "2026-06-11T19:00:00Z",
@@ -49,6 +40,46 @@
       "season": "2026-2026",
       "home": "USA",
       "away": "Paraguay",
+      "matchday": "Matchday 1"
+    },
+    {
+      "id": "fd-WC-537334",
+      "kickoff_utc": "2026-06-13T19:00:00Z",
+      "competition": "FIFA World Cup",
+      "competition_group": "international",
+      "season": "2026-2026",
+      "home": "Qatar",
+      "away": "Switzerland",
+      "matchday": "Matchday 1"
+    },
+    {
+      "id": "fd-WC-537339",
+      "kickoff_utc": "2026-06-13T22:00:00Z",
+      "competition": "FIFA World Cup",
+      "competition_group": "international",
+      "season": "2026-2026",
+      "home": "Brazil",
+      "away": "Morocco",
+      "matchday": "Matchday 1"
+    },
+    {
+      "id": "fd-WC-537340",
+      "kickoff_utc": "2026-06-14T01:00:00Z",
+      "competition": "FIFA World Cup",
+      "competition_group": "international",
+      "season": "2026-2026",
+      "home": "Haiti",
+      "away": "Scotland",
+      "matchday": "Matchday 1"
+    },
+    {
+      "id": "fd-WC-537346",
+      "kickoff_utc": "2026-06-14T04:00:00Z",
+      "competition": "FIFA World Cup",
+      "competition_group": "international",
+      "season": "2026-2026",
+      "home": "Australia",
+      "away": "Turkey",
       "matchday": "Matchday 1"
     }
   ]
