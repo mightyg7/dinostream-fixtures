@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-10T09:40:05Z",
+  "generated_at": "2026-06-11T10:05:17Z",
   "window_days": 14,
   "fixtures": [
     {
@@ -481,6 +481,66 @@
       "home": "Colombia",
       "away": "Congo DR",
       "matchday": "Matchday 2"
+    },
+    {
+      "id": "fd-WC-537337",
+      "kickoff_utc": "2026-06-24T19:00:00Z",
+      "competition": "FIFA World Cup",
+      "competition_group": "international",
+      "season": "2026-2026",
+      "home": "Switzerland",
+      "away": "Canada",
+      "matchday": "Matchday 3"
+    },
+    {
+      "id": "fd-WC-537338",
+      "kickoff_utc": "2026-06-24T19:00:00Z",
+      "competition": "FIFA World Cup",
+      "competition_group": "international",
+      "season": "2026-2026",
+      "home": "Bosnia-H.",
+      "away": "Qatar",
+      "matchday": "Matchday 3"
+    },
+    {
+      "id": "fd-WC-537344",
+      "kickoff_utc": "2026-06-24T22:00:00Z",
+      "competition": "FIFA World Cup",
+      "competition_group": "international",
+      "season": "2026-2026",
+      "home": "Morocco",
+      "away": "Haiti",
+      "matchday": "Matchday 3"
+    },
+    {
+      "id": "fd-WC-537343",
+      "kickoff_utc": "2026-06-24T22:00:00Z",
+      "competition": "FIFA World Cup",
+      "competition_group": "international",
+      "season": "2026-2026",
+      "home": "Scotland",
+      "away": "Brazil",
+      "matchday": "Matchday 3"
+    },
+    {
+      "id": "fd-WC-537331",
+      "kickoff_utc": "2026-06-25T01:00:00Z",
+      "competition": "FIFA World Cup",
+      "competition_group": "international",
+      "season": "2026-2026",
+      "home": "Czechia",
+      "away": "Mexico",
+      "matchday": "Matchday 3"
+    },
+    {
+      "id": "fd-WC-537332",
+      "kickoff_utc": "2026-06-25T01:00:00Z",
+      "competition": "FIFA World Cup",
+      "competition_group": "international",
+      "season": "2026-2026",
+      "home": "South Africa",
+      "away": "Korea Republic",
+      "matchday": "Matchday 3"
     }
   ]
 }
