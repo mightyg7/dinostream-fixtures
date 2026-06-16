@@ -1,47 +1,7 @@
 {
-  "generated_at": "2026-06-15T11:45:25Z",
+  "generated_at": "2026-06-16T10:53:22Z",
   "window_days": 14,
   "fixtures": [
-    {
-      "id": "fd-WC-537369",
-      "kickoff_utc": "2026-06-15T16:00:00Z",
-      "competition": "FIFA World Cup",
-      "competition_group": "international",
-      "season": "2026-2026",
-      "home": "Spain",
-      "away": "Cape Verde",
-      "matchday": "Matchday 1"
-    },
-    {
-      "id": "fd-WC-537363",
-      "kickoff_utc": "2026-06-15T19:00:00Z",
-      "competition": "FIFA World Cup",
-      "competition_group": "international",
-      "season": "2026-2026",
-      "home": "Belgium",
-      "away": "Egypt",
-      "matchday": "Matchday 1"
-    },
-    {
-      "id": "fd-WC-537370",
-      "kickoff_utc": "2026-06-15T22:00:00Z",
-      "competition": "FIFA World Cup",
-      "competition_group": "international",
-      "season": "2026-2026",
-      "home": "Saudi Arabia",
-      "away": "Uruguay",
-      "matchday": "Matchday 1"
-    },
-    {
-      "id": "fd-WC-537364",
-      "kickoff_utc": "2026-06-16T01:00:00Z",
-      "competition": "FIFA World Cup",
-      "competition_group": "international",
-      "season": "2026-2026",
-      "home": "Iran",
-      "away": "New Zealand",
-      "matchday": "Matchday 1"
-    },
     {
       "id": "fd-WC-537391",
       "kickoff_utc": "2026-06-16T19:00:00Z",
