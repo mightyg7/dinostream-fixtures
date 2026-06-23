@@ -1,47 +1,7 @@
 {
-  "generated_at": "2026-06-22T11:34:34Z",
+  "generated_at": "2026-06-23T08:58:15Z",
   "window_days": 14,
   "fixtures": [
-    {
-      "id": "fd-WC-537399",
-      "kickoff_utc": "2026-06-22T17:00:00Z",
-      "competition": "FIFA World Cup",
-      "competition_group": "international",
-      "season": "2026-2026",
-      "home": "Argentina",
-      "away": "Austria",
-      "matchday": "Matchday 2"
-    },
-    {
-      "id": "fd-WC-537393",
-      "kickoff_utc": "2026-06-22T21:00:00Z",
-      "competition": "FIFA World Cup",
-      "competition_group": "international",
-      "season": "2026-2026",
-      "home": "France",
-      "away": "Iraq",
-      "matchday": "Matchday 2"
-    },
-    {
-      "id": "fd-WC-537394",
-      "kickoff_utc": "2026-06-23T00:00:00Z",
-      "competition": "FIFA World Cup",
-      "competition_group": "international",
-      "season": "2026-2026",
-      "home": "Norway",
-      "away": "Senegal",
-      "matchday": "Matchday 2"
-    },
-    {
-      "id": "fd-WC-537400",
-      "kickoff_utc": "2026-06-23T03:00:00Z",
-      "competition": "FIFA World Cup",
-      "competition_group": "international",
-      "season": "2026-2026",
-      "home": "Jordan",
-      "away": "Algeria",
-      "matchday": "Matchday 2"
-    },
     {
       "id": "fd-WC-537405",
       "kickoff_utc": "2026-06-23T17:00:00Z",
