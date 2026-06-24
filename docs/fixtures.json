@@ -1,47 +1,7 @@
 {
-  "generated_at": "2026-06-23T08:58:15Z",
+  "generated_at": "2026-06-24T08:52:34Z",
   "window_days": 14,
   "fixtures": [
-    {
-      "id": "fd-WC-537405",
-      "kickoff_utc": "2026-06-23T17:00:00Z",
-      "competition": "FIFA World Cup",
-      "competition_group": "international",
-      "season": "2026-2026",
-      "home": "Portugal",
-      "away": "Uzbekistan",
-      "matchday": "Matchday 2"
-    },
-    {
-      "id": "fd-WC-537411",
-      "kickoff_utc": "2026-06-23T20:00:00Z",
-      "competition": "FIFA World Cup",
-      "competition_group": "international",
-      "season": "2026-2026",
-      "home": "England",
-      "away": "Ghana",
-      "matchday": "Matchday 2"
-    },
-    {
-      "id": "fd-WC-537412",
-      "kickoff_utc": "2026-06-23T23:00:00Z",
-      "competition": "FIFA World Cup",
-      "competition_group": "international",
-      "season": "2026-2026",
-      "home": "Panama",
-      "away": "Croatia",
-      "matchday": "Matchday 2"
-    },
-    {
-      "id": "fd-WC-537406",
-      "kickoff_utc": "2026-06-24T02:00:00Z",
-      "competition": "FIFA World Cup",
-      "competition_group": "international",
-      "season": "2026-2026",
-      "home": "Colombia",
-      "away": "Congo DR",
-      "matchday": "Matchday 2"
-    },
     {
       "id": "fd-WC-537337",
       "kickoff_utc": "2026-06-24T19:00:00Z",
