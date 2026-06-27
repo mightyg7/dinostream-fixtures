@@ -1,67 +1,7 @@
 {
-  "generated_at": "2026-06-26T08:50:00Z",
+  "generated_at": "2026-06-27T08:25:39Z",
   "window_days": 14,
   "fixtures": [
-    {
-      "id": "fd-WC-537395",
-      "kickoff_utc": "2026-06-26T19:00:00Z",
-      "competition": "FIFA World Cup",
-      "competition_group": "international",
-      "season": "2026-2026",
-      "home": "Norway",
-      "away": "France",
-      "matchday": "Matchday 3"
-    },
-    {
-      "id": "fd-WC-537396",
-      "kickoff_utc": "2026-06-26T19:00:00Z",
-      "competition": "FIFA World Cup",
-      "competition_group": "international",
-      "season": "2026-2026",
-      "home": "Senegal",
-      "away": "Iraq",
-      "matchday": "Matchday 3"
-    },
-    {
-      "id": "fd-WC-537373",
-      "kickoff_utc": "2026-06-27T00:00:00Z",
-      "competition": "FIFA World Cup",
-      "competition_group": "international",
-      "season": "2026-2026",
-      "home": "Uruguay",
-      "away": "Spain",
-      "matchday": "Matchday 3"
-    },
-    {
-      "id": "fd-WC-537374",
-      "kickoff_utc": "2026-06-27T00:00:00Z",
-      "competition": "FIFA World Cup",
-      "competition_group": "international",
-      "season": "2026-2026",
-      "home": "Cape Verde",
-      "away": "Saudi Arabia",
-      "matchday": "Matchday 3"
-    },
-    {
-      "id": "fd-WC-537367",
-      "kickoff_utc": "2026-06-27T03:00:00Z",
-      "competition": "FIFA World Cup",
-      "competition_group": "international",
-      "season": "2026-2026",
-      "home": "New Zealand",
-      "away": "Belgium",
-      "matchday": "Matchday 3"
-    },
-    {
-      "id": "fd-WC-537368",
-      "kickoff_utc": "2026-06-27T03:00:00Z",
-      "competition": "FIFA World Cup",
-      "competition_group": "international",
-      "season": "2026-2026",
-      "home": "Egypt",
-      "away": "Iran",
-      "matchday": "Matchday 3"
-    },
     {
       "id": "fd-WC-537413",
       "kickoff_utc": "2026-06-27T21:00:00Z",
@@ -121,6 +61,42 @@
       "home": "Algeria",
       "away": "Austria",
       "matchday": "Matchday 3"
+    },
+    {
+      "id": "fd-WC-537417",
+      "kickoff_utc": "2026-06-28T19:00:00Z",
+      "competition": "FIFA World Cup",
+      "competition_group": "international",
+      "season": "2026-2026",
+      "home": "South Africa",
+      "away": "Canada"
+    },
+    {
+      "id": "fd-WC-537423",
+      "kickoff_utc": "2026-06-29T17:00:00Z",
+      "competition": "FIFA World Cup",
+      "competition_group": "international",
+      "season": "2026-2026",
+      "home": "Brazil",
+      "away": "Japan"
+    },
+    {
+      "id": "fd-WC-537418",
+      "kickoff_utc": "2026-06-30T01:00:00Z",
+      "competition": "FIFA World Cup",
+      "competition_group": "international",
+      "season": "2026-2026",
+      "home": "Netherlands",
+      "away": "Morocco"
+    },
+    {
+      "id": "fd-WC-537421",
+      "kickoff_utc": "2026-07-02T00:00:00Z",
+      "competition": "FIFA World Cup",
+      "competition_group": "international",
+      "season": "2026-2026",
+      "home": "USA",
+      "away": "Bosnia-H."
     },
     {
       "id": "tsdb-4481-2491759",
