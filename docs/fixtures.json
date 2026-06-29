@@ -1,16 +1,7 @@
 {
-  "generated_at": "2026-06-28T08:39:49Z",
+  "generated_at": "2026-06-29T10:21:17Z",
   "window_days": 14,
   "fixtures": [
-    {
-      "id": "fd-WC-537417",
-      "kickoff_utc": "2026-06-28T19:00:00Z",
-      "competition": "FIFA World Cup",
-      "competition_group": "international",
-      "season": "2026-2026",
-      "home": "South Africa",
-      "away": "Canada"
-    },
     {
       "id": "fd-WC-537423",
       "kickoff_utc": "2026-06-29T17:00:00Z",
