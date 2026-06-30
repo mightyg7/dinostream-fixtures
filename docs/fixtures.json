@@ -1,34 +1,7 @@
 {
-  "generated_at": "2026-06-29T10:21:17Z",
+  "generated_at": "2026-06-30T08:55:59Z",
   "window_days": 14,
   "fixtures": [
-    {
-      "id": "fd-WC-537423",
-      "kickoff_utc": "2026-06-29T17:00:00Z",
-      "competition": "FIFA World Cup",
-      "competition_group": "international",
-      "season": "2026-2026",
-      "home": "Brazil",
-      "away": "Japan"
-    },
-    {
-      "id": "fd-WC-537415",
-      "kickoff_utc": "2026-06-29T20:30:00Z",
-      "competition": "FIFA World Cup",
-      "competition_group": "international",
-      "season": "2026-2026",
-      "home": "Germany",
-      "away": "Paraguay"
-    },
-    {
-      "id": "fd-WC-537418",
-      "kickoff_utc": "2026-06-30T01:00:00Z",
-      "competition": "FIFA World Cup",
-      "competition_group": "international",
-      "season": "2026-2026",
-      "home": "Netherlands",
-      "away": "Morocco"
-    },
     {
       "id": "fd-WC-537424",
       "kickoff_utc": "2026-06-30T17:00:00Z",
@@ -136,6 +109,15 @@
       "season": "2026-2026",
       "home": "Colombia",
       "away": "Ghana"
+    },
+    {
+      "id": "fd-WC-537376",
+      "kickoff_utc": "2026-07-04T17:00:00Z",
+      "competition": "FIFA World Cup",
+      "competition_group": "international",
+      "season": "2026-2026",
+      "home": "Canada",
+      "away": "Morocco"
     },
     {
       "id": "tsdb-4481-2491759",
