@@ -1,34 +1,7 @@
 {
-  "generated_at": "2026-06-30T08:55:59Z",
+  "generated_at": "2026-07-01T09:28:45Z",
   "window_days": 14,
   "fixtures": [
-    {
-      "id": "fd-WC-537424",
-      "kickoff_utc": "2026-06-30T17:00:00Z",
-      "competition": "FIFA World Cup",
-      "competition_group": "international",
-      "season": "2026-2026",
-      "home": "Ivory Coast",
-      "away": "Norway"
-    },
-    {
-      "id": "fd-WC-537416",
-      "kickoff_utc": "2026-06-30T21:00:00Z",
-      "competition": "FIFA World Cup",
-      "competition_group": "international",
-      "season": "2026-2026",
-      "home": "France",
-      "away": "Sweden"
-    },
-    {
-      "id": "fd-WC-537425",
-      "kickoff_utc": "2026-07-01T01:00:00Z",
-      "competition": "FIFA World Cup",
-      "competition_group": "international",
-      "season": "2026-2026",
-      "home": "Mexico",
-      "away": "Ecuador"
-    },
     {
       "id": "fd-WC-537426",
       "kickoff_utc": "2026-07-01T16:00:00Z",
@@ -118,6 +91,24 @@
       "season": "2026-2026",
       "home": "Canada",
       "away": "Morocco"
+    },
+    {
+      "id": "fd-WC-537375",
+      "kickoff_utc": "2026-07-04T21:00:00Z",
+      "competition": "FIFA World Cup",
+      "competition_group": "international",
+      "season": "2026-2026",
+      "home": "Paraguay",
+      "away": "France"
+    },
+    {
+      "id": "fd-WC-537377",
+      "kickoff_utc": "2026-07-05T20:00:00Z",
+      "competition": "FIFA World Cup",
+      "competition_group": "international",
+      "season": "2026-2026",
+      "home": "Brazil",
+      "away": "Norway"
     },
     {
       "id": "tsdb-4481-2491759",
