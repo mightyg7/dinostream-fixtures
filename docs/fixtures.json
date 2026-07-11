@@ -1,16 +1,7 @@
 {
-  "generated_at": "2026-07-10T09:18:13Z",
+  "generated_at": "2026-07-11T07:39:42Z",
   "window_days": 14,
   "fixtures": [
-    {
-      "id": "fd-WC-537384",
-      "kickoff_utc": "2026-07-10T19:00:00Z",
-      "competition": "FIFA World Cup",
-      "competition_group": "international",
-      "season": "2026-2026",
-      "home": "Spain",
-      "away": "Belgium"
-    },
     {
       "id": "fd-WC-537385",
       "kickoff_utc": "2026-07-11T21:00:00Z",
@@ -28,6 +19,15 @@
       "season": "2026-2026",
       "home": "Argentina",
       "away": "Switzerland"
+    },
+    {
+      "id": "fd-WC-537387",
+      "kickoff_utc": "2026-07-14T19:00:00Z",
+      "competition": "FIFA World Cup",
+      "competition_group": "international",
+      "season": "2026-2026",
+      "home": "France",
+      "away": "Spain"
     },
     {
       "id": "tsdb-4481-2491766",
