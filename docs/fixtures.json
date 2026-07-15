@@ -1,16 +1,7 @@
 {
-  "generated_at": "2026-07-14T07:46:22Z",
+  "generated_at": "2026-07-15T07:49:58Z",
   "window_days": 14,
   "fixtures": [
-    {
-      "id": "fd-WC-537387",
-      "kickoff_utc": "2026-07-14T19:00:00Z",
-      "competition": "FIFA World Cup",
-      "competition_group": "international",
-      "season": "2026-2026",
-      "home": "France",
-      "away": "Spain"
-    },
     {
       "id": "fd-WC-537388",
       "kickoff_utc": "2026-07-15T19:00:00Z",
