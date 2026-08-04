@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-03T09:20:13Z",
+  "generated_at": "2026-08-04T08:19:23Z",
   "window_days": 14,
   "fixtures": [
     {
@@ -60,6 +60,16 @@
       "season": "2026-2027",
       "home": "Celta",
       "away": "Osasuna",
+      "matchday": "Matchday 1"
+    },
+    {
+      "id": "fd-PD-564635",
+      "kickoff_utc": "2026-08-17T19:00:00Z",
+      "competition": "La Liga",
+      "competition_group": "big5",
+      "season": "2026-2027",
+      "home": "Deportivo",
+      "away": "Elche",
       "matchday": "Matchday 1"
     }
   ]
