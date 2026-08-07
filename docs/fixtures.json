@@ -1,15 +1,15 @@
 {
-  "generated_at": "2026-08-06T08:14:29Z",
+  "generated_at": "2026-08-07T06:59:26Z",
   "window_days": 14,
   "fixtures": [
     {
-      "id": "tsdb-4481-2553170",
-      "kickoff_utc": "2026-08-06T15:00:00Z",
+      "id": "tsdb-4481-2553176",
+      "kickoff_utc": "2026-08-11T16:00:00Z",
       "competition": "UEFA Europa League",
       "competition_group": "cup",
       "season": "2026-2027",
-      "home": "KuPS",
-      "away": "Universitatea Craiova",
+      "home": "Iberia 1999",
+      "away": "Larne",
       "matchday": "Round 400"
     },
     {
@@ -81,6 +81,16 @@
       "home": "Atleti",
       "away": "M\u00e1laga",
       "matchday": "Matchday 1"
+    },
+    {
+      "id": "fd-PD-564638",
+      "kickoff_utc": "2026-08-20T19:00:00Z",
+      "competition": "La Liga",
+      "competition_group": "big5",
+      "season": "2026-2027",
+      "home": "Rayo Vallecano",
+      "away": "Alav\u00e9s",
+      "matchday": "Matchday 2"
     }
   ]
 }
