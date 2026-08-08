@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-07T06:59:26Z",
+  "generated_at": "2026-08-08T06:33:30Z",
   "window_days": 14,
   "fixtures": [
     {
@@ -90,6 +90,36 @@
       "season": "2026-2027",
       "home": "Rayo Vallecano",
       "away": "Alav\u00e9s",
+      "matchday": "Matchday 2"
+    },
+    {
+      "id": "fd-FL1-559715",
+      "kickoff_utc": "2026-08-21T18:45:00Z",
+      "competition": "Ligue 1",
+      "competition_group": "big5",
+      "season": "2026-2027",
+      "home": "Marseille",
+      "away": "Strasbourg",
+      "matchday": "Matchday 1"
+    },
+    {
+      "id": "fd-PL-560542",
+      "kickoff_utc": "2026-08-21T19:00:00Z",
+      "competition": "Premier League",
+      "competition_group": "big5",
+      "season": "2026-2027",
+      "home": "Arsenal",
+      "away": "Coventry City",
+      "matchday": "Matchday 1"
+    },
+    {
+      "id": "fd-PD-564647",
+      "kickoff_utc": "2026-08-21T19:00:00Z",
+      "competition": "La Liga",
+      "competition_group": "big5",
+      "season": "2026-2027",
+      "home": "Real Betis",
+      "away": "Real Sociedad",
       "matchday": "Matchday 2"
     }
   ]
