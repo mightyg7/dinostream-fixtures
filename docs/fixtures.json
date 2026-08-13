@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-12T07:07:21Z",
+  "generated_at": "2026-08-13T07:11:45Z",
   "window_days": 14,
   "fixtures": [
     {
@@ -480,6 +480,16 @@
       "season": "2026-2027",
       "home": "Valencia",
       "away": "Real Betis",
+      "matchday": "Matchday 1"
+    },
+    {
+      "id": "fd-PD-564631",
+      "kickoff_utc": "2026-08-26T19:00:00Z",
+      "competition": "La Liga",
+      "competition_group": "big5",
+      "season": "2026-2027",
+      "home": "Real Madrid",
+      "away": "Real Sociedad",
       "matchday": "Matchday 1"
     }
   ]
