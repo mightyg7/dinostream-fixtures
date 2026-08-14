@@ -1,17 +1,7 @@
 {
-  "generated_at": "2026-08-13T07:11:45Z",
+  "generated_at": "2026-08-14T07:08:11Z",
   "window_days": 14,
   "fixtures": [
-    {
-      "id": "tsdb-4481-2553173",
-      "kickoff_utc": "2026-08-13T17:00:00Z",
-      "competition": "UEFA Europa League",
-      "competition_group": "cup",
-      "season": "2026-2027",
-      "home": "Universitatea Craiova",
-      "away": "KuPS",
-      "matchday": "Round 400"
-    },
     {
       "id": "fd-PD-564634",
       "kickoff_utc": "2026-08-15T17:30:00Z",
@@ -81,6 +71,15 @@
       "home": "Atleti",
       "away": "M\u00e1laga",
       "matchday": "Matchday 1"
+    },
+    {
+      "id": "tsdb-4481-2570006",
+      "kickoff_utc": "2026-08-20T17:00:00Z",
+      "competition": "UEFA Europa League",
+      "competition_group": "cup",
+      "season": "2026-2027",
+      "home": "Crvena Zvezda",
+      "away": "Viktoria Plze\u0148"
     },
     {
       "id": "fd-PD-564638",
@@ -490,6 +489,16 @@
       "season": "2026-2027",
       "home": "Real Madrid",
       "away": "Real Sociedad",
+      "matchday": "Matchday 1"
+    },
+    {
+      "id": "fd-PD-564630",
+      "kickoff_utc": "2026-08-27T19:00:00Z",
+      "competition": "La Liga",
+      "competition_group": "big5",
+      "season": "2026-2027",
+      "home": "Bar\u00e7a",
+      "away": "Athletic",
       "matchday": "Matchday 1"
     }
   ]
