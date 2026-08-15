@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-14T07:08:11Z",
+  "generated_at": "2026-08-15T06:19:51Z",
   "window_days": 14,
   "fixtures": [
     {
@@ -40,16 +40,6 @@
       "season": "2026-2027",
       "home": "Espanyol",
       "away": "Levante",
-      "matchday": "Matchday 1"
-    },
-    {
-      "id": "fd-PD-564636",
-      "kickoff_utc": "2026-08-16T19:30:00Z",
-      "competition": "La Liga",
-      "competition_group": "big5",
-      "season": "2026-2027",
-      "home": "Celta",
-      "away": "Osasuna",
       "matchday": "Matchday 1"
     },
     {
@@ -492,6 +482,16 @@
       "matchday": "Matchday 1"
     },
     {
+      "id": "fd-PD-564636",
+      "kickoff_utc": "2026-08-27T18:30:00Z",
+      "competition": "La Liga",
+      "competition_group": "big5",
+      "season": "2026-2027",
+      "home": "Celta",
+      "away": "Osasuna",
+      "matchday": "Matchday 1"
+    },
+    {
       "id": "fd-PD-564630",
       "kickoff_utc": "2026-08-27T19:00:00Z",
       "competition": "La Liga",
@@ -500,6 +500,66 @@
       "home": "Bar\u00e7a",
       "away": "Athletic",
       "matchday": "Matchday 1"
+    },
+    {
+      "id": "fd-PD-564654",
+      "kickoff_utc": "2026-08-28T17:00:00Z",
+      "competition": "La Liga",
+      "competition_group": "big5",
+      "season": "2026-2027",
+      "home": "Santander",
+      "away": "Elche",
+      "matchday": "Matchday 3"
+    },
+    {
+      "id": "fd-BL1-565776",
+      "kickoff_utc": "2026-08-28T18:30:00Z",
+      "competition": "Bundesliga",
+      "competition_group": "big5",
+      "season": "2026-2027",
+      "home": "Bayern",
+      "away": "Stuttgart",
+      "matchday": "Matchday 1"
+    },
+    {
+      "id": "fd-SA-558625",
+      "kickoff_utc": "2026-08-28T18:45:00Z",
+      "competition": "Serie A",
+      "competition_group": "big5",
+      "season": "2026-2027",
+      "home": "Milan",
+      "away": "Venezia FC",
+      "matchday": "Matchday 2"
+    },
+    {
+      "id": "fd-FL1-559702",
+      "kickoff_utc": "2026-08-28T18:45:00Z",
+      "competition": "Ligue 1",
+      "competition_group": "big5",
+      "season": "2026-2027",
+      "home": "Lille",
+      "away": "PSG",
+      "matchday": "Matchday 2"
+    },
+    {
+      "id": "fd-PL-560555",
+      "kickoff_utc": "2026-08-28T19:00:00Z",
+      "competition": "Premier League",
+      "competition_group": "big5",
+      "season": "2026-2027",
+      "home": "Crystal Palace",
+      "away": "Man City",
+      "matchday": "Matchday 2"
+    },
+    {
+      "id": "fd-PD-564648",
+      "kickoff_utc": "2026-08-28T19:30:00Z",
+      "competition": "La Liga",
+      "competition_group": "big5",
+      "season": "2026-2027",
+      "home": "Alav\u00e9s",
+      "away": "Villarreal",
+      "matchday": "Matchday 3"
     }
   ]
 }
