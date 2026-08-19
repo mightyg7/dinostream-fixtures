@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-18T06:24:39Z",
+  "generated_at": "2026-08-19T06:25:29Z",
   "window_days": 14,
   "fixtures": [
     {
@@ -19,7 +19,8 @@
       "competition_group": "cup",
       "season": "2026-2027",
       "home": "Kairat Almaty",
-      "away": "Anderlecht"
+      "away": "Anderlecht",
+      "matchday": "Round 400"
     },
     {
       "id": "fd-PD-564638",
