@@ -1,17 +1,7 @@
 {
-  "generated_at": "2026-08-19T06:25:29Z",
+  "generated_at": "2026-08-20T06:26:37Z",
   "window_days": 14,
   "fixtures": [
-    {
-      "id": "fd-PD-564628",
-      "kickoff_utc": "2026-08-19T19:00:00Z",
-      "competition": "La Liga",
-      "competition_group": "big5",
-      "season": "2026-2027",
-      "home": "Atleti",
-      "away": "M\u00e1laga",
-      "matchday": "Matchday 1"
-    },
     {
       "id": "tsdb-4481-2573282",
       "kickoff_utc": "2026-08-20T15:00:00Z",
