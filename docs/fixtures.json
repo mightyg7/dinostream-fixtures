@@ -1,27 +1,7 @@
 {
-  "generated_at": "2026-08-20T06:26:37Z",
+  "generated_at": "2026-08-21T06:27:42Z",
   "window_days": 14,
   "fixtures": [
-    {
-      "id": "tsdb-4481-2573282",
-      "kickoff_utc": "2026-08-20T15:00:00Z",
-      "competition": "UEFA Europa League",
-      "competition_group": "cup",
-      "season": "2026-2027",
-      "home": "Kairat Almaty",
-      "away": "Anderlecht",
-      "matchday": "Round 400"
-    },
-    {
-      "id": "fd-PD-564638",
-      "kickoff_utc": "2026-08-20T19:00:00Z",
-      "competition": "La Liga",
-      "competition_group": "big5",
-      "season": "2026-2027",
-      "home": "Rayo Vallecano",
-      "away": "Alav\u00e9s",
-      "matchday": "Matchday 2"
-    },
     {
       "id": "fd-FL1-559715",
       "kickoff_utc": "2026-08-21T18:45:00Z",
@@ -421,6 +401,16 @@
       "home": "Real Madrid",
       "away": "Real Sociedad",
       "matchday": "Matchday 1"
+    },
+    {
+      "id": "tsdb-4481-2573295",
+      "kickoff_utc": "2026-08-27T16:00:00Z",
+      "competition": "UEFA Europa League",
+      "competition_group": "cup",
+      "season": "2026-2027",
+      "home": "Iberia 1999",
+      "away": "Jagiellonia Bia\u0142ystok",
+      "matchday": "Round 400"
     },
     {
       "id": "fd-PD-564636",
@@ -921,6 +911,26 @@
       "home": "Bar\u00e7a",
       "away": "Rayo Vallecano",
       "matchday": "Matchday 3"
+    },
+    {
+      "id": "fd-FL1-559696",
+      "kickoff_utc": "2026-09-03T18:45:00Z",
+      "competition": "Ligue 1",
+      "competition_group": "big5",
+      "season": "2026-2027",
+      "home": "Toulouse",
+      "away": "Lille",
+      "matchday": "Matchday 3"
+    },
+    {
+      "id": "fd-PD-564682",
+      "kickoff_utc": "2026-09-03T19:00:00Z",
+      "competition": "La Liga",
+      "competition_group": "big5",
+      "season": "2026-2027",
+      "home": "Real Sociedad",
+      "away": "Celta",
+      "matchday": "Matchday 6"
     }
   ]
 }
