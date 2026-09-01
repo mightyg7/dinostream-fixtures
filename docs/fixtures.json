@@ -1,57 +1,7 @@
 {
-  "generated_at": "2026-08-31T12:07:51Z",
+  "generated_at": "2026-09-01T10:45:10Z",
   "window_days": 14,
   "fixtures": [
-    {
-      "id": "fd-SA-558621",
-      "kickoff_utc": "2026-08-31T16:30:00Z",
-      "competition": "Serie A",
-      "competition_group": "big5",
-      "season": "2026-2027",
-      "home": "Lecce",
-      "away": "Roma",
-      "matchday": "Matchday 2"
-    },
-    {
-      "id": "fd-PD-564657",
-      "kickoff_utc": "2026-08-31T17:30:00Z",
-      "competition": "La Liga",
-      "competition_group": "big5",
-      "season": "2026-2027",
-      "home": "Osasuna",
-      "away": "Getafe",
-      "matchday": "Matchday 3"
-    },
-    {
-      "id": "fd-SA-558628",
-      "kickoff_utc": "2026-08-31T18:45:00Z",
-      "competition": "Serie A",
-      "competition_group": "big5",
-      "season": "2026-2027",
-      "home": "Atalanta",
-      "away": "Bologna",
-      "matchday": "Matchday 2"
-    },
-    {
-      "id": "fd-PL-560557",
-      "kickoff_utc": "2026-08-31T19:00:00Z",
-      "competition": "Premier League",
-      "competition_group": "big5",
-      "season": "2026-2027",
-      "home": "Aston Villa",
-      "away": "Arsenal",
-      "matchday": "Matchday 2"
-    },
-    {
-      "id": "fd-PD-564650",
-      "kickoff_utc": "2026-08-31T19:30:00Z",
-      "competition": "La Liga",
-      "competition_group": "big5",
-      "season": "2026-2027",
-      "home": "Bar\u00e7a",
-      "away": "Rayo Vallecano",
-      "matchday": "Matchday 3"
-    },
     {
       "id": "fd-FL1-559696",
       "kickoff_utc": "2026-09-03T18:45:00Z",
@@ -903,13 +853,13 @@
       "matchday": "Matchday 4"
     },
     {
-      "id": "fd-SA-558608",
+      "id": "fd-SA-558600",
       "kickoff_utc": "2026-09-12T16:00:00Z",
       "competition": "Serie A",
       "competition_group": "big5",
       "season": "2026-2027",
-      "home": "Sassuolo",
-      "away": "Juventus",
+      "home": "Lazio",
+      "away": "Milan",
       "matchday": "Matchday 4"
     },
     {
@@ -1013,16 +963,6 @@
       "matchday": "Matchday 5"
     },
     {
-      "id": "fd-SA-558603",
-      "kickoff_utc": "2026-09-13T10:30:00Z",
-      "competition": "Serie A",
-      "competition_group": "big5",
-      "season": "2026-2027",
-      "home": "Torino",
-      "away": "Roma",
-      "matchday": "Matchday 4"
-    },
-    {
       "id": "fd-PD-564672",
       "kickoff_utc": "2026-09-13T12:00:00Z",
       "competition": "La Liga",
@@ -1040,16 +980,6 @@
       "season": "2026-2027",
       "home": "Coventry City",
       "away": "Brighton Hove",
-      "matchday": "Matchday 4"
-    },
-    {
-      "id": "fd-SA-558602",
-      "kickoff_utc": "2026-09-13T13:00:00Z",
-      "competition": "Serie A",
-      "competition_group": "big5",
-      "season": "2026-2027",
-      "home": "Como 1907",
-      "away": "Parma",
       "matchday": "Matchday 4"
     },
     {
@@ -1143,13 +1073,13 @@
       "matchday": "Matchday 5"
     },
     {
-      "id": "fd-SA-558600",
+      "id": "fd-SA-558608",
       "kickoff_utc": "2026-09-13T18:45:00Z",
       "competition": "Serie A",
       "competition_group": "big5",
       "season": "2026-2027",
-      "home": "Lazio",
-      "away": "Milan",
+      "home": "Sassuolo",
+      "away": "Juventus",
       "matchday": "Matchday 4"
     },
     {
@@ -1170,6 +1100,56 @@
       "season": "2026-2027",
       "home": "Real Sociedad",
       "away": "Atleti",
+      "matchday": "Matchday 5"
+    },
+    {
+      "id": "fd-SA-558602",
+      "kickoff_utc": "2026-09-14T16:30:00Z",
+      "competition": "Serie A",
+      "competition_group": "big5",
+      "season": "2026-2027",
+      "home": "Como 1907",
+      "away": "Parma",
+      "matchday": "Matchday 4"
+    },
+    {
+      "id": "fd-SA-558603",
+      "kickoff_utc": "2026-09-14T16:30:00Z",
+      "competition": "Serie A",
+      "competition_group": "big5",
+      "season": "2026-2027",
+      "home": "Torino",
+      "away": "Roma",
+      "matchday": "Matchday 4"
+    },
+    {
+      "id": "fd-SA-558601",
+      "kickoff_utc": "2026-09-14T18:45:00Z",
+      "competition": "Serie A",
+      "competition_group": "big5",
+      "season": "2026-2027",
+      "home": "Inter",
+      "away": "Udinese",
+      "matchday": "Matchday 4"
+    },
+    {
+      "id": "fd-PL-560579",
+      "kickoff_utc": "2026-09-14T19:00:00Z",
+      "competition": "Premier League",
+      "competition_group": "big5",
+      "season": "2026-2027",
+      "home": "Leeds United",
+      "away": "Newcastle",
+      "matchday": "Matchday 4"
+    },
+    {
+      "id": "fd-PD-564671",
+      "kickoff_utc": "2026-09-14T19:00:00Z",
+      "competition": "La Liga",
+      "competition_group": "big5",
+      "season": "2026-2027",
+      "home": "Villarreal",
+      "away": "Real Betis",
       "matchday": "Matchday 5"
     }
   ]
