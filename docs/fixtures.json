@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-01T10:45:10Z",
+  "generated_at": "2026-09-02T10:10:18Z",
   "window_days": 14,
   "fixtures": [
     {
@@ -1151,6 +1151,36 @@
       "home": "Villarreal",
       "away": "Real Betis",
       "matchday": "Matchday 5"
+    },
+    {
+      "id": "fd-PD-564678",
+      "kickoff_utc": "2026-09-15T17:00:00Z",
+      "competition": "La Liga",
+      "competition_group": "big5",
+      "season": "2026-2027",
+      "home": "Rayo Vallecano",
+      "away": "Espanyol",
+      "matchday": "Matchday 6"
+    },
+    {
+      "id": "fd-PD-564680",
+      "kickoff_utc": "2026-09-15T18:00:00Z",
+      "competition": "La Liga",
+      "competition_group": "big5",
+      "season": "2026-2027",
+      "home": "Alav\u00e9s",
+      "away": "Valencia",
+      "matchday": "Matchday 6"
+    },
+    {
+      "id": "fd-PD-564681",
+      "kickoff_utc": "2026-09-15T19:30:00Z",
+      "competition": "La Liga",
+      "competition_group": "big5",
+      "season": "2026-2027",
+      "home": "Elche",
+      "away": "Real Madrid",
+      "matchday": "Matchday 6"
     }
   ]
 }
