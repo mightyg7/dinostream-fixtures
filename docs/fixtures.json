@@ -1,27 +1,7 @@
 {
-  "generated_at": "2026-09-03T10:21:39Z",
+  "generated_at": "2026-09-04T10:08:38Z",
   "window_days": 14,
   "fixtures": [
-    {
-      "id": "fd-FL1-559696",
-      "kickoff_utc": "2026-09-03T18:45:00Z",
-      "competition": "Ligue 1",
-      "competition_group": "big5",
-      "season": "2026-2027",
-      "home": "Toulouse",
-      "away": "Lille",
-      "matchday": "Matchday 3"
-    },
-    {
-      "id": "fd-PD-564682",
-      "kickoff_utc": "2026-09-03T19:00:00Z",
-      "competition": "La Liga",
-      "competition_group": "big5",
-      "season": "2026-2027",
-      "home": "Real Sociedad",
-      "away": "Celta",
-      "matchday": "Matchday 6"
-    },
     {
       "id": "fd-FL1-559699",
       "kickoff_utc": "2026-09-04T17:00:00Z",
@@ -1230,6 +1210,26 @@
       "season": "2026-2027",
       "home": "Bar\u00e7a",
       "away": "Santander",
+      "matchday": "Matchday 6"
+    },
+    {
+      "id": "fd-PD-564686",
+      "kickoff_utc": "2026-09-17T17:00:00Z",
+      "competition": "La Liga",
+      "competition_group": "big5",
+      "season": "2026-2027",
+      "home": "Real Betis",
+      "away": "Getafe",
+      "matchday": "Matchday 6"
+    },
+    {
+      "id": "fd-PD-564683",
+      "kickoff_utc": "2026-09-17T19:30:00Z",
+      "competition": "La Liga",
+      "competition_group": "big5",
+      "season": "2026-2027",
+      "home": "M\u00e1laga",
+      "away": "Villarreal",
       "matchday": "Matchday 6"
     }
   ]
