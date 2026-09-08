@@ -1,47 +1,7 @@
 {
-  "generated_at": "2026-09-07T11:00:52Z",
+  "generated_at": "2026-09-08T10:16:19Z",
   "window_days": 14,
   "fixtures": [
-    {
-      "id": "fd-SA-558610",
-      "kickoff_utc": "2026-09-07T16:30:00Z",
-      "competition": "Serie A",
-      "competition_group": "big5",
-      "season": "2026-2027",
-      "home": "Cagliari",
-      "away": "Lecce",
-      "matchday": "Matchday 3"
-    },
-    {
-      "id": "fd-PD-564665",
-      "kickoff_utc": "2026-09-07T17:00:00Z",
-      "competition": "La Liga",
-      "competition_group": "big5",
-      "season": "2026-2027",
-      "home": "Getafe",
-      "away": "Celta",
-      "matchday": "Matchday 4"
-    },
-    {
-      "id": "fd-SA-558617",
-      "kickoff_utc": "2026-09-07T18:45:00Z",
-      "competition": "Serie A",
-      "competition_group": "big5",
-      "season": "2026-2027",
-      "home": "Udinese",
-      "away": "Lazio",
-      "matchday": "Matchday 3"
-    },
-    {
-      "id": "fd-PD-564658",
-      "kickoff_utc": "2026-09-07T19:30:00Z",
-      "competition": "La Liga",
-      "competition_group": "big5",
-      "season": "2026-2027",
-      "home": "Elche",
-      "away": "Real Sociedad",
-      "matchday": "Matchday 4"
-    },
     {
       "id": "fd-CL-575323",
       "kickoff_utc": "2026-09-08T16:45:00Z",
