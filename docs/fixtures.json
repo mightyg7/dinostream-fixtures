@@ -1,67 +1,7 @@
 {
-  "generated_at": "2026-09-08T10:16:19Z",
+  "generated_at": "2026-09-09T10:22:14Z",
   "window_days": 14,
   "fixtures": [
-    {
-      "id": "fd-CL-575323",
-      "kickoff_utc": "2026-09-08T16:45:00Z",
-      "competition": "UEFA Champions League",
-      "competition_group": "cup",
-      "season": "2026-2027",
-      "home": "Club Brugge",
-      "away": "Aston Villa",
-      "matchday": "Matchday 1"
-    },
-    {
-      "id": "fd-CL-575324",
-      "kickoff_utc": "2026-09-08T16:45:00Z",
-      "competition": "UEFA Champions League",
-      "competition_group": "cup",
-      "season": "2026-2027",
-      "home": "PAE AEK",
-      "away": "LASK",
-      "matchday": "Matchday 1"
-    },
-    {
-      "id": "fd-CL-575325",
-      "kickoff_utc": "2026-09-08T19:00:00Z",
-      "competition": "UEFA Champions League",
-      "competition_group": "cup",
-      "season": "2026-2027",
-      "home": "Real Madrid",
-      "away": "Inter",
-      "matchday": "Matchday 1"
-    },
-    {
-      "id": "fd-CL-575326",
-      "kickoff_utc": "2026-09-08T19:00:00Z",
-      "competition": "UEFA Champions League",
-      "competition_group": "cup",
-      "season": "2026-2027",
-      "home": "Porto",
-      "away": "Man City",
-      "matchday": "Matchday 1"
-    },
-    {
-      "id": "fd-CL-575327",
-      "kickoff_utc": "2026-09-08T19:00:00Z",
-      "competition": "UEFA Champions League",
-      "competition_group": "cup",
-      "season": "2026-2027",
-      "home": "Dortmund",
-      "away": "Villarreal",
-      "matchday": "Matchday 1"
-    },
-    {
-      "id": "fd-CL-575328",
-      "kickoff_utc": "2026-09-08T19:00:00Z",
-      "competition": "UEFA Champions League",
-      "competition_group": "cup",
-      "season": "2026-2027",
-      "home": "Lille",
-      "away": "Real Betis",
-      "matchday": "Matchday 1"
-    },
     {
       "id": "fd-CL-575329",
       "kickoff_utc": "2026-09-09T16:45:00Z",
