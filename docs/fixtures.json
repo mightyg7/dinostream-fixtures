@@ -1,67 +1,7 @@
 {
-  "generated_at": "2026-09-10T10:14:35Z",
+  "generated_at": "2026-09-11T10:12:17Z",
   "window_days": 14,
   "fixtures": [
-    {
-      "id": "fd-CL-575335",
-      "kickoff_utc": "2026-09-10T16:45:00Z",
-      "competition": "UEFA Champions League",
-      "competition_group": "cup",
-      "season": "2026-2027",
-      "home": "Fenerbah\u00e7e",
-      "away": "Roma",
-      "matchday": "Matchday 1"
-    },
-    {
-      "id": "fd-CL-575336",
-      "kickoff_utc": "2026-09-10T16:45:00Z",
-      "competition": "UEFA Champions League",
-      "competition_group": "cup",
-      "season": "2026-2027",
-      "home": "PSV",
-      "away": "Shaktar",
-      "matchday": "Matchday 1"
-    },
-    {
-      "id": "fd-CL-575337",
-      "kickoff_utc": "2026-09-10T19:00:00Z",
-      "competition": "UEFA Champions League",
-      "competition_group": "cup",
-      "season": "2026-2027",
-      "home": "Bayern",
-      "away": "Bod\u00f8/Glimt",
-      "matchday": "Matchday 1"
-    },
-    {
-      "id": "fd-CL-575338",
-      "kickoff_utc": "2026-09-10T19:00:00Z",
-      "competition": "UEFA Champions League",
-      "competition_group": "cup",
-      "season": "2026-2027",
-      "home": "Man United",
-      "away": "Sabah FK",
-      "matchday": "Matchday 1"
-    },
-    {
-      "id": "fd-CL-575339",
-      "kickoff_utc": "2026-09-10T19:00:00Z",
-      "competition": "UEFA Champions League",
-      "competition_group": "cup",
-      "season": "2026-2027",
-      "home": "Como 1907",
-      "away": "RB Leipzig",
-      "matchday": "Matchday 1"
-    },
-    {
-      "id": "fd-CL-575340",
-      "kickoff_utc": "2026-09-10T19:00:00Z",
-      "competition": "UEFA Champions League",
-      "competition_group": "cup",
-      "season": "2026-2027",
-      "home": "Slavia Praha",
-      "away": "RC Lens",
-      "matchday": "Matchday 1"
-    },
     {
       "id": "fd-BL1-565797",
       "kickoff_utc": "2026-09-11T18:30:00Z",
