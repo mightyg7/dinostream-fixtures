@@ -1,47 +1,7 @@
 {
-  "generated_at": "2026-09-11T10:12:17Z",
+  "generated_at": "2026-09-12T09:46:23Z",
   "window_days": 14,
   "fixtures": [
-    {
-      "id": "fd-BL1-565797",
-      "kickoff_utc": "2026-09-11T18:30:00Z",
-      "competition": "Bundesliga",
-      "competition_group": "big5",
-      "season": "2026-2027",
-      "home": "Union Berlin",
-      "away": "Schalke",
-      "matchday": "Matchday 3"
-    },
-    {
-      "id": "fd-SA-558606",
-      "kickoff_utc": "2026-09-11T18:45:00Z",
-      "competition": "Serie A",
-      "competition_group": "big5",
-      "season": "2026-2027",
-      "home": "Venezia FC",
-      "away": "Fiorentina",
-      "matchday": "Matchday 4"
-    },
-    {
-      "id": "fd-FL1-559689",
-      "kickoff_utc": "2026-09-11T18:45:00Z",
-      "competition": "Ligue 1",
-      "competition_group": "big5",
-      "season": "2026-2027",
-      "home": "Stade Rennais",
-      "away": "Marseille",
-      "matchday": "Matchday 4"
-    },
-    {
-      "id": "fd-PD-564669",
-      "kickoff_utc": "2026-09-11T19:00:00Z",
-      "competition": "La Liga",
-      "competition_group": "big5",
-      "season": "2026-2027",
-      "home": "Sevilla FC",
-      "away": "Valencia",
-      "matchday": "Matchday 5"
-    },
     {
       "id": "fd-PD-564670",
       "kickoff_utc": "2026-09-12T12:00:00Z",
