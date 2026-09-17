@@ -1,56 +1,16 @@
 {
-  "generated_at": "2026-09-16T10:28:11Z",
+  "generated_at": "2026-09-17T10:38:21Z",
   "window_days": 14,
   "fixtures": [
     {
-      "id": "tsdb-4481-2594942",
-      "kickoff_utc": "2026-09-16T16:45:00Z",
+      "id": "tsdb-4481-2594923",
+      "kickoff_utc": "2026-09-17T16:45:00Z",
       "competition": "UEFA Europa League",
       "competition_group": "cup",
       "season": "2026-2027",
-      "home": "Omonia Nicosia",
-      "away": "Celta Vigo",
+      "home": "Levski Sofia",
+      "away": "Red Bull Salzburg",
       "matchday": "Round 1"
-    },
-    {
-      "id": "fd-PD-564679",
-      "kickoff_utc": "2026-09-16T17:00:00Z",
-      "competition": "La Liga",
-      "competition_group": "big5",
-      "season": "2026-2027",
-      "home": "Deportivo",
-      "away": "Sevilla FC",
-      "matchday": "Matchday 6"
-    },
-    {
-      "id": "fd-PD-564684",
-      "kickoff_utc": "2026-09-16T17:00:00Z",
-      "competition": "La Liga",
-      "competition_group": "big5",
-      "season": "2026-2027",
-      "home": "Atleti",
-      "away": "Osasuna",
-      "matchday": "Matchday 6"
-    },
-    {
-      "id": "fd-PD-564685",
-      "kickoff_utc": "2026-09-16T19:30:00Z",
-      "competition": "La Liga",
-      "competition_group": "big5",
-      "season": "2026-2027",
-      "home": "Levante",
-      "away": "Athletic",
-      "matchday": "Matchday 6"
-    },
-    {
-      "id": "fd-PD-564687",
-      "kickoff_utc": "2026-09-16T19:30:00Z",
-      "competition": "La Liga",
-      "competition_group": "big5",
-      "season": "2026-2027",
-      "home": "Bar\u00e7a",
-      "away": "Santander",
-      "matchday": "Matchday 6"
     },
     {
       "id": "fd-PD-564686",
