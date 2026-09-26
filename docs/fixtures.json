@@ -1,5 +1,36 @@
 {
-  "generated_at": "2026-09-25T10:48:03Z",
+  "generated_at": "2026-09-26T10:29:31Z",
   "window_days": 14,
-  "fixtures": []
+  "fixtures": [
+    {
+      "id": "fd-BL1-565820",
+      "kickoff_utc": "2026-10-09T18:30:00Z",
+      "competition": "Bundesliga",
+      "competition_group": "big5",
+      "season": "2026-2027",
+      "home": "Dortmund",
+      "away": "Bremen",
+      "matchday": "Matchday 5"
+    },
+    {
+      "id": "fd-FL1-559669",
+      "kickoff_utc": "2026-10-09T18:45:00Z",
+      "competition": "Ligue 1",
+      "competition_group": "big5",
+      "season": "2026-2027",
+      "home": "RC Lens",
+      "away": "Olympique Lyon",
+      "matchday": "Matchday 6"
+    },
+    {
+      "id": "fd-PD-564706",
+      "kickoff_utc": "2026-10-09T19:00:00Z",
+      "competition": "La Liga",
+      "competition_group": "big5",
+      "season": "2026-2027",
+      "home": "M\u00e1laga",
+      "away": "Espanyol",
+      "matchday": "Matchday 8"
+    }
+  ]
 }
