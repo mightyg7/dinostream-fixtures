@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-02T11:33:58Z",
+  "generated_at": "2026-10-03T10:48:19Z",
   "window_days": 14,
   "fixtures": [
     {
@@ -671,6 +671,46 @@
       "home": "Lyon",
       "away": "Crystal Palace",
       "matchday": "Round 2"
+    },
+    {
+      "id": "fd-BL1-565828",
+      "kickoff_utc": "2026-10-16T18:30:00Z",
+      "competition": "Bundesliga",
+      "competition_group": "big5",
+      "season": "2026-2027",
+      "home": "Frankfurt",
+      "away": "1. FC K\u00f6ln",
+      "matchday": "Matchday 6"
+    },
+    {
+      "id": "fd-SA-558573",
+      "kickoff_utc": "2026-10-16T18:45:00Z",
+      "competition": "Serie A",
+      "competition_group": "big5",
+      "season": "2026-2027",
+      "home": "Frosinone",
+      "away": "Sassuolo",
+      "matchday": "Matchday 7"
+    },
+    {
+      "id": "fd-FL1-559661",
+      "kickoff_utc": "2026-10-16T18:45:00Z",
+      "competition": "Ligue 1",
+      "competition_group": "big5",
+      "season": "2026-2027",
+      "home": "Le Mans",
+      "away": "Toulouse",
+      "matchday": "Matchday 7"
+    },
+    {
+      "id": "fd-PD-564716",
+      "kickoff_utc": "2026-10-16T19:00:00Z",
+      "competition": "La Liga",
+      "competition_group": "big5",
+      "season": "2026-2027",
+      "home": "Deportivo",
+      "away": "Levante",
+      "matchday": "Matchday 9"
     }
   ]
 }
