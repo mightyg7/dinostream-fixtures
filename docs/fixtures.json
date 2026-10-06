@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-05T12:59:53Z",
+  "generated_at": "2026-10-06T12:24:32Z",
   "window_days": 14,
   "fixtures": [
     {
@@ -1110,6 +1110,46 @@
       "season": "2026-2027",
       "home": "Real Madrid",
       "away": "Sevilla FC",
+      "matchday": "Matchday 9"
+    },
+    {
+      "id": "fd-SA-558576",
+      "kickoff_utc": "2026-10-19T16:30:00Z",
+      "competition": "Serie A",
+      "competition_group": "big5",
+      "season": "2026-2027",
+      "home": "Monza",
+      "away": "Cagliari",
+      "matchday": "Matchday 7"
+    },
+    {
+      "id": "fd-SA-558578",
+      "kickoff_utc": "2026-10-19T18:45:00Z",
+      "competition": "Serie A",
+      "competition_group": "big5",
+      "season": "2026-2027",
+      "home": "Parma",
+      "away": "Torino",
+      "matchday": "Matchday 7"
+    },
+    {
+      "id": "fd-PL-560606",
+      "kickoff_utc": "2026-10-19T19:00:00Z",
+      "competition": "Premier League",
+      "competition_group": "big5",
+      "season": "2026-2027",
+      "home": "Tottenham",
+      "away": "Coventry City",
+      "matchday": "Matchday 7"
+    },
+    {
+      "id": "fd-PD-564717",
+      "kickoff_utc": "2026-10-19T19:00:00Z",
+      "competition": "La Liga",
+      "competition_group": "big5",
+      "season": "2026-2027",
+      "home": "Getafe",
+      "away": "Rayo Vallecano",
       "matchday": "Matchday 9"
     }
   ]
