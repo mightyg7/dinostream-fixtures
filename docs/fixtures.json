@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-06T12:24:32Z",
+  "generated_at": "2026-10-07T12:17:28Z",
   "window_days": 14,
   "fixtures": [
     {
@@ -1151,6 +1151,96 @@
       "home": "Getafe",
       "away": "Rayo Vallecano",
       "matchday": "Matchday 9"
+    },
+    {
+      "id": "fd-CL-575359",
+      "kickoff_utc": "2026-10-20T16:45:00Z",
+      "competition": "UEFA Champions League",
+      "competition_group": "cup",
+      "season": "2026-2027",
+      "home": "Sabah FK",
+      "away": "Dortmund",
+      "matchday": "Matchday 3"
+    },
+    {
+      "id": "fd-CL-575360",
+      "kickoff_utc": "2026-10-20T16:45:00Z",
+      "competition": "UEFA Champions League",
+      "competition_group": "cup",
+      "season": "2026-2027",
+      "home": "Fenerbah\u00e7e",
+      "away": "Slavia Praha",
+      "matchday": "Matchday 3"
+    },
+    {
+      "id": "fd-CL-575361",
+      "kickoff_utc": "2026-10-20T19:00:00Z",
+      "competition": "UEFA Champions League",
+      "competition_group": "cup",
+      "season": "2026-2027",
+      "home": "Man City",
+      "away": "PAE AEK",
+      "matchday": "Matchday 3"
+    },
+    {
+      "id": "fd-CL-575362",
+      "kickoff_utc": "2026-10-20T19:00:00Z",
+      "competition": "UEFA Champions League",
+      "competition_group": "cup",
+      "season": "2026-2027",
+      "home": "Stuttgart",
+      "away": "Atleti",
+      "matchday": "Matchday 3"
+    },
+    {
+      "id": "fd-CL-575363",
+      "kickoff_utc": "2026-10-20T19:00:00Z",
+      "competition": "UEFA Champions League",
+      "competition_group": "cup",
+      "season": "2026-2027",
+      "home": "Liverpool",
+      "away": "Villarreal",
+      "matchday": "Matchday 3"
+    },
+    {
+      "id": "fd-CL-575364",
+      "kickoff_utc": "2026-10-20T19:00:00Z",
+      "competition": "UEFA Champions League",
+      "competition_group": "cup",
+      "season": "2026-2027",
+      "home": "Roma",
+      "away": "Sl. Bratislava",
+      "matchday": "Matchday 3"
+    },
+    {
+      "id": "fd-CL-575365",
+      "kickoff_utc": "2026-10-20T19:00:00Z",
+      "competition": "UEFA Champions League",
+      "competition_group": "cup",
+      "season": "2026-2027",
+      "home": "Porto",
+      "away": "PSV",
+      "matchday": "Matchday 3"
+    },
+    {
+      "id": "fd-CL-575366",
+      "kickoff_utc": "2026-10-20T19:00:00Z",
+      "competition": "UEFA Champions League",
+      "competition_group": "cup",
+      "season": "2026-2027",
+      "home": "Napoli",
+      "away": "Bod\u00f8/Glimt",
+      "matchday": "Matchday 3"
+    },
+    {
+      "id": "fd-CL-575367",
+      "kickoff_utc": "2026-10-20T19:00:00Z",
+      "competition": "UEFA Champions League",
+      "competition_group": "cup",
+      "season": "2026-2027",
+      "home": "PSG",
+      "away": "Bar\u00e7a",
+      "matchday": "Matchday 3"
     }
   ]
 }
