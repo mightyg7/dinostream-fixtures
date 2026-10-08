@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-07T12:17:28Z",
+  "generated_at": "2026-10-08T12:27:18Z",
   "window_days": 14,
   "fixtures": [
     {
@@ -1240,6 +1240,106 @@
       "season": "2026-2027",
       "home": "PSG",
       "away": "Bar\u00e7a",
+      "matchday": "Matchday 3"
+    },
+    {
+      "id": "fd-CL-575368",
+      "kickoff_utc": "2026-10-21T16:45:00Z",
+      "competition": "UEFA Champions League",
+      "competition_group": "cup",
+      "season": "2026-2027",
+      "home": "Como 1907",
+      "away": "Man United",
+      "matchday": "Matchday 3"
+    },
+    {
+      "id": "fd-CL-575369",
+      "kickoff_utc": "2026-10-21T16:45:00Z",
+      "competition": "UEFA Champions League",
+      "competition_group": "cup",
+      "season": "2026-2027",
+      "home": "Lille",
+      "away": "Galatasaray",
+      "matchday": "Matchday 3"
+    },
+    {
+      "id": "fd-PD-564685",
+      "kickoff_utc": "2026-10-21T18:00:00Z",
+      "competition": "La Liga",
+      "competition_group": "big5",
+      "season": "2026-2027",
+      "home": "Levante",
+      "away": "Athletic",
+      "matchday": "Matchday 6"
+    },
+    {
+      "id": "fd-CL-575370",
+      "kickoff_utc": "2026-10-21T19:00:00Z",
+      "competition": "UEFA Champions League",
+      "competition_group": "cup",
+      "season": "2026-2027",
+      "home": "Real Madrid",
+      "away": "RB Leipzig",
+      "matchday": "Matchday 3"
+    },
+    {
+      "id": "fd-CL-575371",
+      "kickoff_utc": "2026-10-21T19:00:00Z",
+      "competition": "UEFA Champions League",
+      "competition_group": "cup",
+      "season": "2026-2027",
+      "home": "Inter",
+      "away": "Shaktar",
+      "matchday": "Matchday 3"
+    },
+    {
+      "id": "fd-CL-575372",
+      "kickoff_utc": "2026-10-21T19:00:00Z",
+      "competition": "UEFA Champions League",
+      "competition_group": "cup",
+      "season": "2026-2027",
+      "home": "Bayern",
+      "away": "Arsenal",
+      "matchday": "Matchday 3"
+    },
+    {
+      "id": "fd-CL-575373",
+      "kickoff_utc": "2026-10-21T19:00:00Z",
+      "competition": "UEFA Champions League",
+      "competition_group": "cup",
+      "season": "2026-2027",
+      "home": "Club Brugge",
+      "away": "RC Lens",
+      "matchday": "Matchday 3"
+    },
+    {
+      "id": "fd-CL-575374",
+      "kickoff_utc": "2026-10-21T19:00:00Z",
+      "competition": "UEFA Champions League",
+      "competition_group": "cup",
+      "season": "2026-2027",
+      "home": "Aston Villa",
+      "away": "Viking",
+      "matchday": "Matchday 3"
+    },
+    {
+      "id": "fd-CL-575375",
+      "kickoff_utc": "2026-10-21T19:00:00Z",
+      "competition": "UEFA Champions League",
+      "competition_group": "cup",
+      "season": "2026-2027",
+      "home": "Sporting CP",
+      "away": "LASK",
+      "matchday": "Matchday 3"
+    },
+    {
+      "id": "fd-CL-575376",
+      "kickoff_utc": "2026-10-21T19:00:00Z",
+      "competition": "UEFA Champions League",
+      "competition_group": "cup",
+      "season": "2026-2027",
+      "home": "Real Betis",
+      "away": "Feyenoord",
       "matchday": "Matchday 3"
     }
   ]
