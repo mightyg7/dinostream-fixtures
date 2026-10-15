@@ -1,97 +1,7 @@
 {
-  "generated_at": "2026-10-14T10:50:26Z",
+  "generated_at": "2026-10-15T10:32:36Z",
   "window_days": 14,
   "fixtures": [
-    {
-      "id": "fd-CL-575350",
-      "kickoff_utc": "2026-10-14T16:45:00Z",
-      "competition": "UEFA Champions League",
-      "competition_group": "cup",
-      "season": "2026-2027",
-      "home": "LASK",
-      "away": "Liverpool",
-      "matchday": "Matchday 2"
-    },
-    {
-      "id": "fd-CL-575351",
-      "kickoff_utc": "2026-10-14T16:45:00Z",
-      "competition": "UEFA Champions League",
-      "competition_group": "cup",
-      "season": "2026-2027",
-      "home": "Feyenoord",
-      "away": "Como 1907",
-      "matchday": "Matchday 2"
-    },
-    {
-      "id": "fd-CL-575352",
-      "kickoff_utc": "2026-10-14T19:00:00Z",
-      "competition": "UEFA Champions League",
-      "competition_group": "cup",
-      "season": "2026-2027",
-      "home": "Roma",
-      "away": "Real Madrid",
-      "matchday": "Matchday 2"
-    },
-    {
-      "id": "fd-CL-575353",
-      "kickoff_utc": "2026-10-14T19:00:00Z",
-      "competition": "UEFA Champions League",
-      "competition_group": "cup",
-      "season": "2026-2027",
-      "home": "Man City",
-      "away": "PSG",
-      "matchday": "Matchday 2"
-    },
-    {
-      "id": "fd-CL-575354",
-      "kickoff_utc": "2026-10-14T19:00:00Z",
-      "competition": "UEFA Champions League",
-      "competition_group": "cup",
-      "season": "2026-2027",
-      "home": "Bod\u00f8/Glimt",
-      "away": "Dortmund",
-      "matchday": "Matchday 2"
-    },
-    {
-      "id": "fd-CL-575355",
-      "kickoff_utc": "2026-10-14T19:00:00Z",
-      "competition": "UEFA Champions League",
-      "competition_group": "cup",
-      "season": "2026-2027",
-      "home": "Aston Villa",
-      "away": "Fenerbah\u00e7e",
-      "matchday": "Matchday 2"
-    },
-    {
-      "id": "fd-CL-575356",
-      "kickoff_utc": "2026-10-14T19:00:00Z",
-      "competition": "UEFA Champions League",
-      "competition_group": "cup",
-      "season": "2026-2027",
-      "home": "Real Betis",
-      "away": "Porto",
-      "matchday": "Matchday 2"
-    },
-    {
-      "id": "fd-CL-575357",
-      "kickoff_utc": "2026-10-14T19:00:00Z",
-      "competition": "UEFA Champions League",
-      "competition_group": "cup",
-      "season": "2026-2027",
-      "home": "Shaktar",
-      "away": "PAE AEK",
-      "matchday": "Matchday 2"
-    },
-    {
-      "id": "fd-CL-575358",
-      "kickoff_utc": "2026-10-14T19:00:00Z",
-      "competition": "UEFA Champions League",
-      "competition_group": "cup",
-      "season": "2026-2027",
-      "home": "Sl. Bratislava",
-      "away": "Stuttgart",
-      "matchday": "Matchday 2"
-    },
     {
       "id": "tsdb-4481-2594820",
       "kickoff_utc": "2026-10-15T16:45:00Z",
@@ -1280,6 +1190,56 @@
       "season": "2026-2027",
       "home": "Torino",
       "away": "Como 1907",
+      "matchday": "Matchday 9"
+    },
+    {
+      "id": "fd-SA-558549",
+      "kickoff_utc": "2026-10-28T17:30:00Z",
+      "competition": "Serie A",
+      "competition_group": "big5",
+      "season": "2026-2027",
+      "home": "Milan",
+      "away": "Bologna",
+      "matchday": "Matchday 9"
+    },
+    {
+      "id": "fd-SA-558550",
+      "kickoff_utc": "2026-10-28T17:30:00Z",
+      "competition": "Serie A",
+      "competition_group": "big5",
+      "season": "2026-2027",
+      "home": "Venezia FC",
+      "away": "Inter",
+      "matchday": "Matchday 9"
+    },
+    {
+      "id": "fd-SA-558553",
+      "kickoff_utc": "2026-10-28T17:30:00Z",
+      "competition": "Serie A",
+      "competition_group": "big5",
+      "season": "2026-2027",
+      "home": "Parma",
+      "away": "Udinese",
+      "matchday": "Matchday 9"
+    },
+    {
+      "id": "fd-SA-558552",
+      "kickoff_utc": "2026-10-28T19:45:00Z",
+      "competition": "Serie A",
+      "competition_group": "big5",
+      "season": "2026-2027",
+      "home": "Genoa",
+      "away": "Juventus",
+      "matchday": "Matchday 9"
+    },
+    {
+      "id": "fd-SA-558554",
+      "kickoff_utc": "2026-10-28T19:45:00Z",
+      "competition": "Serie A",
+      "competition_group": "big5",
+      "season": "2026-2027",
+      "home": "Monza",
+      "away": "Napoli",
       "matchday": "Matchday 9"
     }
   ]
