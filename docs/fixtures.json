@@ -1,17 +1,7 @@
 {
-  "generated_at": "2026-10-15T10:32:36Z",
+  "generated_at": "2026-10-16T10:19:48Z",
   "window_days": 14,
   "fixtures": [
-    {
-      "id": "tsdb-4481-2594820",
-      "kickoff_utc": "2026-10-15T16:45:00Z",
-      "competition": "UEFA Europa League",
-      "competition_group": "cup",
-      "season": "2026-2027",
-      "home": "Lyon",
-      "away": "Crystal Palace",
-      "matchday": "Round 2"
-    },
     {
       "id": "fd-BL1-565828",
       "kickoff_utc": "2026-10-16T18:30:00Z",
@@ -1240,6 +1230,26 @@
       "season": "2026-2027",
       "home": "Monza",
       "away": "Napoli",
+      "matchday": "Matchday 9"
+    },
+    {
+      "id": "fd-SA-558558",
+      "kickoff_utc": "2026-10-29T17:30:00Z",
+      "competition": "Serie A",
+      "competition_group": "big5",
+      "season": "2026-2027",
+      "home": "Frosinone",
+      "away": "Lecce",
+      "matchday": "Matchday 9"
+    },
+    {
+      "id": "fd-SA-558551",
+      "kickoff_utc": "2026-10-29T19:45:00Z",
+      "competition": "Serie A",
+      "competition_group": "big5",
+      "season": "2026-2027",
+      "home": "Fiorentina",
+      "away": "Atalanta",
       "matchday": "Matchday 9"
     }
   ]
