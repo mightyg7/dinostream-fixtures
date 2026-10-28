@@ -1,37 +1,7 @@
 {
-  "generated_at": "2026-10-27T11:15:11Z",
+  "generated_at": "2026-10-28T11:49:18Z",
   "window_days": 14,
   "fixtures": [
-    {
-      "id": "fd-SA-558556",
-      "kickoff_utc": "2026-10-27T17:30:00Z",
-      "competition": "Serie A",
-      "competition_group": "big5",
-      "season": "2026-2027",
-      "home": "Sassuolo",
-      "away": "Lazio",
-      "matchday": "Matchday 9"
-    },
-    {
-      "id": "fd-SA-558555",
-      "kickoff_utc": "2026-10-27T19:45:00Z",
-      "competition": "Serie A",
-      "competition_group": "big5",
-      "season": "2026-2027",
-      "home": "Roma",
-      "away": "Cagliari",
-      "matchday": "Matchday 9"
-    },
-    {
-      "id": "fd-SA-558557",
-      "kickoff_utc": "2026-10-27T19:45:00Z",
-      "competition": "Serie A",
-      "competition_group": "big5",
-      "season": "2026-2027",
-      "home": "Torino",
-      "away": "Como 1907",
-      "matchday": "Matchday 9"
-    },
     {
       "id": "fd-SA-558549",
       "kickoff_utc": "2026-10-28T17:30:00Z",
@@ -110,6 +80,16 @@
       "season": "2026-2027",
       "home": "Le Havre",
       "away": "PSG",
+      "matchday": "Matchday 9"
+    },
+    {
+      "id": "fd-FL1-559646",
+      "kickoff_utc": "2026-10-30T18:00:00Z",
+      "competition": "Ligue 1",
+      "competition_group": "big5",
+      "season": "2026-2027",
+      "home": "Nice",
+      "away": "Stade Rennais",
       "matchday": "Matchday 9"
     },
     {
@@ -283,16 +263,6 @@
       "matchday": "Matchday 11"
     },
     {
-      "id": "fd-FL1-559646",
-      "kickoff_utc": "2026-10-31T16:15:00Z",
-      "competition": "Ligue 1",
-      "competition_group": "big5",
-      "season": "2026-2027",
-      "home": "Nice",
-      "away": "Stade Rennais",
-      "matchday": "Matchday 9"
-    },
-    {
       "id": "fd-SA-558542",
       "kickoff_utc": "2026-10-31T17:00:00Z",
       "competition": "Serie A",
@@ -341,26 +311,6 @@
       "home": "Milan",
       "away": "Inter",
       "matchday": "Matchday 10"
-    },
-    {
-      "id": "fd-FL1-559640",
-      "kickoff_utc": "2026-10-31T19:45:00Z",
-      "competition": "Ligue 1",
-      "competition_group": "big5",
-      "season": "2026-2027",
-      "home": "Olympique Lyon",
-      "away": "Angers SCO",
-      "matchday": "Matchday 9"
-    },
-    {
-      "id": "fd-FL1-559641",
-      "kickoff_utc": "2026-10-31T19:45:00Z",
-      "competition": "Ligue 1",
-      "competition_group": "big5",
-      "season": "2026-2027",
-      "home": "Lorient",
-      "away": "Brest",
-      "matchday": "Matchday 9"
     },
     {
       "id": "fd-FL1-559643",
@@ -463,6 +413,16 @@
       "matchday": "Matchday 11"
     },
     {
+      "id": "fd-FL1-559640",
+      "kickoff_utc": "2026-11-01T16:15:00Z",
+      "competition": "Ligue 1",
+      "competition_group": "big5",
+      "season": "2026-2027",
+      "home": "Olympique Lyon",
+      "away": "Angers SCO",
+      "matchday": "Matchday 9"
+    },
+    {
       "id": "fd-FL1-559642",
       "kickoff_utc": "2026-11-01T16:15:00Z",
       "competition": "Ligue 1",
@@ -561,6 +521,16 @@
       "home": "Atalanta",
       "away": "Parma",
       "matchday": "Matchday 10"
+    },
+    {
+      "id": "fd-FL1-559641",
+      "kickoff_utc": "2026-11-02T19:45:00Z",
+      "competition": "Ligue 1",
+      "competition_group": "big5",
+      "season": "2026-2027",
+      "home": "Lorient",
+      "away": "Brest",
+      "matchday": "Matchday 9"
     },
     {
       "id": "fd-PL-560622",
