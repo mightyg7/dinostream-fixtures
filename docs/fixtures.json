@@ -1,57 +1,7 @@
 {
-  "generated_at": "2026-10-28T11:49:18Z",
+  "generated_at": "2026-10-29T11:57:04Z",
   "window_days": 14,
   "fixtures": [
-    {
-      "id": "fd-SA-558549",
-      "kickoff_utc": "2026-10-28T17:30:00Z",
-      "competition": "Serie A",
-      "competition_group": "big5",
-      "season": "2026-2027",
-      "home": "Milan",
-      "away": "Bologna",
-      "matchday": "Matchday 9"
-    },
-    {
-      "id": "fd-SA-558550",
-      "kickoff_utc": "2026-10-28T17:30:00Z",
-      "competition": "Serie A",
-      "competition_group": "big5",
-      "season": "2026-2027",
-      "home": "Venezia FC",
-      "away": "Inter",
-      "matchday": "Matchday 9"
-    },
-    {
-      "id": "fd-SA-558553",
-      "kickoff_utc": "2026-10-28T17:30:00Z",
-      "competition": "Serie A",
-      "competition_group": "big5",
-      "season": "2026-2027",
-      "home": "Parma",
-      "away": "Udinese",
-      "matchday": "Matchday 9"
-    },
-    {
-      "id": "fd-SA-558552",
-      "kickoff_utc": "2026-10-28T19:45:00Z",
-      "competition": "Serie A",
-      "competition_group": "big5",
-      "season": "2026-2027",
-      "home": "Genoa",
-      "away": "Juventus",
-      "matchday": "Matchday 9"
-    },
-    {
-      "id": "fd-SA-558554",
-      "kickoff_utc": "2026-10-28T19:45:00Z",
-      "competition": "Serie A",
-      "competition_group": "big5",
-      "season": "2026-2027",
-      "home": "Monza",
-      "away": "Napoli",
-      "matchday": "Matchday 9"
-    },
     {
       "id": "fd-SA-558558",
       "kickoff_utc": "2026-10-29T17:30:00Z",
