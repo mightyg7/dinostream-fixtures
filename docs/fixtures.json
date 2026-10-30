@@ -1,27 +1,7 @@
 {
-  "generated_at": "2026-10-29T11:57:04Z",
+  "generated_at": "2026-10-30T11:51:03Z",
   "window_days": 14,
   "fixtures": [
-    {
-      "id": "fd-SA-558558",
-      "kickoff_utc": "2026-10-29T17:30:00Z",
-      "competition": "Serie A",
-      "competition_group": "big5",
-      "season": "2026-2027",
-      "home": "Frosinone",
-      "away": "Lecce",
-      "matchday": "Matchday 9"
-    },
-    {
-      "id": "fd-SA-558551",
-      "kickoff_utc": "2026-10-29T19:45:00Z",
-      "competition": "Serie A",
-      "competition_group": "big5",
-      "season": "2026-2027",
-      "home": "Fiorentina",
-      "away": "Atalanta",
-      "matchday": "Matchday 9"
-    },
     {
       "id": "fd-FL1-559644",
       "kickoff_utc": "2026-10-30T18:00:00Z",
