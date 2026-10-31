@@ -1,57 +1,7 @@
 {
-  "generated_at": "2026-10-30T11:51:03Z",
+  "generated_at": "2026-10-31T11:24:29Z",
   "window_days": 14,
   "fixtures": [
-    {
-      "id": "fd-FL1-559644",
-      "kickoff_utc": "2026-10-30T18:00:00Z",
-      "competition": "Ligue 1",
-      "competition_group": "big5",
-      "season": "2026-2027",
-      "home": "Le Havre",
-      "away": "PSG",
-      "matchday": "Matchday 9"
-    },
-    {
-      "id": "fd-FL1-559646",
-      "kickoff_utc": "2026-10-30T18:00:00Z",
-      "competition": "Ligue 1",
-      "competition_group": "big5",
-      "season": "2026-2027",
-      "home": "Nice",
-      "away": "Stade Rennais",
-      "matchday": "Matchday 9"
-    },
-    {
-      "id": "fd-BL1-565846",
-      "kickoff_utc": "2026-10-30T19:30:00Z",
-      "competition": "Bundesliga",
-      "competition_group": "big5",
-      "season": "2026-2027",
-      "home": "Elversberg",
-      "away": "Mainz",
-      "matchday": "Matchday 8"
-    },
-    {
-      "id": "fd-PD-564737",
-      "kickoff_utc": "2026-10-30T20:00:00Z",
-      "competition": "La Liga",
-      "competition_group": "big5",
-      "season": "2026-2027",
-      "home": "Villarreal",
-      "away": "Espanyol",
-      "matchday": "Matchday 11"
-    },
-    {
-      "id": "fd-FL1-559639",
-      "kickoff_utc": "2026-10-30T20:05:00Z",
-      "competition": "Ligue 1",
-      "competition_group": "big5",
-      "season": "2026-2027",
-      "home": "Lille",
-      "away": "RC Lens",
-      "matchday": "Matchday 9"
-    },
     {
       "id": "fd-PL-560626",
       "kickoff_utc": "2026-10-31T12:30:00Z",
