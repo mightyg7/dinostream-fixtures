@@ -1,57 +1,7 @@
 {
-  "generated_at": "2026-11-02T14:10:43Z",
+  "generated_at": "2026-11-03T13:14:19Z",
   "window_days": 14,
   "fixtures": [
-    {
-      "id": "fd-SA-558541",
-      "kickoff_utc": "2026-11-02T17:30:00Z",
-      "competition": "Serie A",
-      "competition_group": "big5",
-      "season": "2026-2027",
-      "home": "Sassuolo",
-      "away": "Fiorentina",
-      "matchday": "Matchday 10"
-    },
-    {
-      "id": "fd-SA-558545",
-      "kickoff_utc": "2026-11-02T19:45:00Z",
-      "competition": "Serie A",
-      "competition_group": "big5",
-      "season": "2026-2027",
-      "home": "Atalanta",
-      "away": "Parma",
-      "matchday": "Matchday 10"
-    },
-    {
-      "id": "fd-FL1-559641",
-      "kickoff_utc": "2026-11-02T19:45:00Z",
-      "competition": "Ligue 1",
-      "competition_group": "big5",
-      "season": "2026-2027",
-      "home": "Lorient",
-      "away": "Brest",
-      "matchday": "Matchday 9"
-    },
-    {
-      "id": "fd-PL-560622",
-      "kickoff_utc": "2026-11-02T20:00:00Z",
-      "competition": "Premier League",
-      "competition_group": "big5",
-      "season": "2026-2027",
-      "home": "Newcastle",
-      "away": "Everton",
-      "matchday": "Matchday 9"
-    },
-    {
-      "id": "fd-PD-564731",
-      "kickoff_utc": "2026-11-02T20:00:00Z",
-      "competition": "La Liga",
-      "competition_group": "big5",
-      "season": "2026-2027",
-      "home": "Deportivo",
-      "away": "Osasuna",
-      "matchday": "Matchday 11"
-    },
     {
       "id": "fd-CL-575377",
       "kickoff_utc": "2026-11-03T17:45:00Z",
