@@ -1,57 +1,7 @@
 {
-  "generated_at": "2026-11-06T13:26:12Z",
+  "generated_at": "2026-11-07T12:05:14Z",
   "window_days": 14,
   "fixtures": [
-    {
-      "id": "fd-BL1-565852",
-      "kickoff_utc": "2026-11-06T19:30:00Z",
-      "competition": "Bundesliga",
-      "competition_group": "big5",
-      "season": "2026-2027",
-      "home": "HSV",
-      "away": "M'gladbach",
-      "matchday": "Matchday 9"
-    },
-    {
-      "id": "fd-SA-558537",
-      "kickoff_utc": "2026-11-06T19:45:00Z",
-      "competition": "Serie A",
-      "competition_group": "big5",
-      "season": "2026-2027",
-      "home": "Venezia FC",
-      "away": "Udinese",
-      "matchday": "Matchday 11"
-    },
-    {
-      "id": "fd-FL1-559638",
-      "kickoff_utc": "2026-11-06T19:45:00Z",
-      "competition": "Ligue 1",
-      "competition_group": "big5",
-      "season": "2026-2027",
-      "home": "Toulouse",
-      "away": "Strasbourg",
-      "matchday": "Matchday 10"
-    },
-    {
-      "id": "fd-PL-560634",
-      "kickoff_utc": "2026-11-06T20:00:00Z",
-      "competition": "Premier League",
-      "competition_group": "big5",
-      "season": "2026-2027",
-      "home": "Everton",
-      "away": "Coventry City",
-      "matchday": "Matchday 10"
-    },
-    {
-      "id": "fd-PD-564740",
-      "kickoff_utc": "2026-11-06T20:00:00Z",
-      "competition": "La Liga",
-      "competition_group": "big5",
-      "season": "2026-2027",
-      "home": "Sevilla FC",
-      "away": "Alav\u00e9s",
-      "matchday": "Matchday 12"
-    },
     {
       "id": "fd-PL-560632",
       "kickoff_utc": "2026-11-07T12:30:00Z",
@@ -481,6 +431,36 @@
       "home": "Atleti",
       "away": "Bar\u00e7a",
       "matchday": "Matchday 12"
+    },
+    {
+      "id": "fd-BL1-565859",
+      "kickoff_utc": "2026-11-20T19:30:00Z",
+      "competition": "Bundesliga",
+      "competition_group": "big5",
+      "season": "2026-2027",
+      "home": "Bayern",
+      "away": "1. FC K\u00f6ln",
+      "matchday": "Matchday 10"
+    },
+    {
+      "id": "fd-FL1-559622",
+      "kickoff_utc": "2026-11-20T19:45:00Z",
+      "competition": "Ligue 1",
+      "competition_group": "big5",
+      "season": "2026-2027",
+      "home": "Troyes",
+      "away": "Le Havre",
+      "matchday": "Matchday 11"
+    },
+    {
+      "id": "fd-PD-564748",
+      "kickoff_utc": "2026-11-20T20:00:00Z",
+      "competition": "La Liga",
+      "competition_group": "big5",
+      "season": "2026-2027",
+      "home": "Athletic",
+      "away": "Espanyol",
+      "matchday": "Matchday 13"
     }
   ]
 }
