@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-11T13:11:20Z",
+  "generated_at": "2026-11-12T14:14:26Z",
   "window_days": 14,
   "fixtures": [
     {
@@ -570,6 +570,96 @@
       "season": "2026-2027",
       "home": "Como 1907",
       "away": "PAE AEK",
+      "matchday": "Matchday 5"
+    },
+    {
+      "id": "fd-CL-575404",
+      "kickoff_utc": "2026-11-25T17:45:00Z",
+      "competition": "UEFA Champions League",
+      "competition_group": "cup",
+      "season": "2026-2027",
+      "home": "Sabah FK",
+      "away": "Bar\u00e7a",
+      "matchday": "Matchday 5"
+    },
+    {
+      "id": "fd-CL-575405",
+      "kickoff_utc": "2026-11-25T17:45:00Z",
+      "competition": "UEFA Champions League",
+      "competition_group": "cup",
+      "season": "2026-2027",
+      "home": "Slavia Praha",
+      "away": "Villarreal",
+      "matchday": "Matchday 5"
+    },
+    {
+      "id": "fd-CL-575406",
+      "kickoff_utc": "2026-11-25T20:00:00Z",
+      "competition": "UEFA Champions League",
+      "competition_group": "cup",
+      "season": "2026-2027",
+      "home": "Inter",
+      "away": "Stuttgart",
+      "matchday": "Matchday 5"
+    },
+    {
+      "id": "fd-CL-575407",
+      "kickoff_utc": "2026-11-25T20:00:00Z",
+      "competition": "UEFA Champions League",
+      "competition_group": "cup",
+      "season": "2026-2027",
+      "home": "Atleti",
+      "away": "Viking",
+      "matchday": "Matchday 5"
+    },
+    {
+      "id": "fd-CL-575408",
+      "kickoff_utc": "2026-11-25T20:00:00Z",
+      "competition": "UEFA Champions League",
+      "competition_group": "cup",
+      "season": "2026-2027",
+      "home": "PSG",
+      "away": "Roma",
+      "matchday": "Matchday 5"
+    },
+    {
+      "id": "fd-CL-575409",
+      "kickoff_utc": "2026-11-25T20:00:00Z",
+      "competition": "UEFA Champions League",
+      "competition_group": "cup",
+      "season": "2026-2027",
+      "home": "Club Brugge",
+      "away": "Liverpool",
+      "matchday": "Matchday 5"
+    },
+    {
+      "id": "fd-CL-575410",
+      "kickoff_utc": "2026-11-25T20:00:00Z",
+      "competition": "UEFA Champions League",
+      "competition_group": "cup",
+      "season": "2026-2027",
+      "home": "Lille",
+      "away": "Bayern",
+      "matchday": "Matchday 5"
+    },
+    {
+      "id": "fd-CL-575411",
+      "kickoff_utc": "2026-11-25T20:00:00Z",
+      "competition": "UEFA Champions League",
+      "competition_group": "cup",
+      "season": "2026-2027",
+      "home": "Sporting CP",
+      "away": "Man United",
+      "matchday": "Matchday 5"
+    },
+    {
+      "id": "fd-CL-575412",
+      "kickoff_utc": "2026-11-25T20:00:00Z",
+      "competition": "UEFA Champions League",
+      "competition_group": "cup",
+      "season": "2026-2027",
+      "home": "Shaktar",
+      "away": "Fenerbah\u00e7e",
       "matchday": "Matchday 5"
     }
   ]
