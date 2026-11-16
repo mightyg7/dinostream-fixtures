@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-15T13:08:58Z",
+  "generated_at": "2026-11-16T14:16:49Z",
   "window_days": 14,
   "fixtures": [
     {
@@ -940,6 +940,176 @@
       "season": "2026-2027",
       "home": "Valencia",
       "away": "Osasuna",
+      "matchday": "Matchday 14"
+    },
+    {
+      "id": "fd-SA-558509",
+      "kickoff_utc": "2026-11-29T14:00:00Z",
+      "competition": "Serie A",
+      "competition_group": "big5",
+      "season": "2026-2027",
+      "home": "Sassuolo",
+      "away": "Napoli",
+      "matchday": "Matchday 13"
+    },
+    {
+      "id": "fd-FL1-559619",
+      "kickoff_utc": "2026-11-29T14:00:00Z",
+      "competition": "Ligue 1",
+      "competition_group": "big5",
+      "season": "2026-2027",
+      "home": "Auxerre",
+      "away": "Marseille",
+      "matchday": "Matchday 12"
+    },
+    {
+      "id": "fd-PL-560657",
+      "kickoff_utc": "2026-11-29T14:05:00Z",
+      "competition": "Premier League",
+      "competition_group": "big5",
+      "season": "2026-2027",
+      "home": "Fulham",
+      "away": "Bournemouth",
+      "matchday": "Matchday 12"
+    },
+    {
+      "id": "fd-PL-560659",
+      "kickoff_utc": "2026-11-29T14:05:00Z",
+      "competition": "Premier League",
+      "competition_group": "big5",
+      "season": "2026-2027",
+      "home": "Brighton Hove",
+      "away": "Newcastle",
+      "matchday": "Matchday 12"
+    },
+    {
+      "id": "fd-PL-560660",
+      "kickoff_utc": "2026-11-29T14:05:00Z",
+      "competition": "Premier League",
+      "competition_group": "big5",
+      "season": "2026-2027",
+      "home": "Sunderland",
+      "away": "Tottenham",
+      "matchday": "Matchday 12"
+    },
+    {
+      "id": "fd-PL-560661",
+      "kickoff_utc": "2026-11-29T14:05:00Z",
+      "competition": "Premier League",
+      "competition_group": "big5",
+      "season": "2026-2027",
+      "home": "Crystal Palace",
+      "away": "Hull City",
+      "matchday": "Matchday 12"
+    },
+    {
+      "id": "fd-BL1-565873",
+      "kickoff_utc": "2026-11-29T14:30:00Z",
+      "competition": "Bundesliga",
+      "competition_group": "big5",
+      "season": "2026-2027",
+      "home": "Freiburg",
+      "away": "RB Leipzig",
+      "matchday": "Matchday 11"
+    },
+    {
+      "id": "fd-PD-564766",
+      "kickoff_utc": "2026-11-29T15:15:00Z",
+      "competition": "La Liga",
+      "competition_group": "big5",
+      "season": "2026-2027",
+      "home": "Deportivo",
+      "away": "Bar\u00e7a",
+      "matchday": "Matchday 14"
+    },
+    {
+      "id": "fd-FL1-559618",
+      "kickoff_utc": "2026-11-29T16:15:00Z",
+      "competition": "Ligue 1",
+      "competition_group": "big5",
+      "season": "2026-2027",
+      "home": "Toulouse",
+      "away": "Stade Rennais",
+      "matchday": "Matchday 12"
+    },
+    {
+      "id": "fd-PL-560654",
+      "kickoff_utc": "2026-11-29T16:30:00Z",
+      "competition": "Premier League",
+      "competition_group": "big5",
+      "season": "2026-2027",
+      "home": "Arsenal",
+      "away": "Man City",
+      "matchday": "Matchday 12"
+    },
+    {
+      "id": "fd-BL1-565871",
+      "kickoff_utc": "2026-11-29T16:30:00Z",
+      "competition": "Bundesliga",
+      "competition_group": "big5",
+      "season": "2026-2027",
+      "home": "Hoffenheim",
+      "away": "Augsburg",
+      "matchday": "Matchday 11"
+    },
+    {
+      "id": "fd-SA-558512",
+      "kickoff_utc": "2026-11-29T17:00:00Z",
+      "competition": "Serie A",
+      "competition_group": "big5",
+      "season": "2026-2027",
+      "home": "Roma",
+      "away": "Monza",
+      "matchday": "Matchday 13"
+    },
+    {
+      "id": "fd-PD-564758",
+      "kickoff_utc": "2026-11-29T17:30:00Z",
+      "competition": "La Liga",
+      "competition_group": "big5",
+      "season": "2026-2027",
+      "home": "Celta",
+      "away": "Villarreal",
+      "matchday": "Matchday 14"
+    },
+    {
+      "id": "fd-BL1-565872",
+      "kickoff_utc": "2026-11-29T18:30:00Z",
+      "competition": "Bundesliga",
+      "competition_group": "big5",
+      "season": "2026-2027",
+      "home": "Dortmund",
+      "away": "Leverkusen",
+      "matchday": "Matchday 11"
+    },
+    {
+      "id": "fd-SA-558511",
+      "kickoff_utc": "2026-11-29T19:45:00Z",
+      "competition": "Serie A",
+      "competition_group": "big5",
+      "season": "2026-2027",
+      "home": "Como 1907",
+      "away": "Juventus",
+      "matchday": "Matchday 13"
+    },
+    {
+      "id": "fd-FL1-559615",
+      "kickoff_utc": "2026-11-29T19:45:00Z",
+      "competition": "Ligue 1",
+      "competition_group": "big5",
+      "season": "2026-2027",
+      "home": "Olympique Lyon",
+      "away": "Monaco",
+      "matchday": "Matchday 12"
+    },
+    {
+      "id": "fd-PD-564764",
+      "kickoff_utc": "2026-11-29T20:00:00Z",
+      "competition": "La Liga",
+      "competition_group": "big5",
+      "season": "2026-2027",
+      "home": "Real Sociedad",
+      "away": "Sevilla FC",
       "matchday": "Matchday 14"
     }
   ]
