@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-16T14:16:49Z",
+  "generated_at": "2026-11-17T15:08:29Z",
   "window_days": 14,
   "fixtures": [
     {
@@ -1110,6 +1110,36 @@
       "season": "2026-2027",
       "home": "Real Sociedad",
       "away": "Sevilla FC",
+      "matchday": "Matchday 14"
+    },
+    {
+      "id": "fd-SA-558516",
+      "kickoff_utc": "2026-11-30T17:30:00Z",
+      "competition": "Serie A",
+      "competition_group": "big5",
+      "season": "2026-2027",
+      "home": "Lecce",
+      "away": "Atalanta",
+      "matchday": "Matchday 13"
+    },
+    {
+      "id": "fd-SA-558510",
+      "kickoff_utc": "2026-11-30T19:45:00Z",
+      "competition": "Serie A",
+      "competition_group": "big5",
+      "season": "2026-2027",
+      "home": "Cagliari",
+      "away": "Milan",
+      "matchday": "Matchday 13"
+    },
+    {
+      "id": "fd-PD-564763",
+      "kickoff_utc": "2026-11-30T20:00:00Z",
+      "competition": "La Liga",
+      "competition_group": "big5",
+      "season": "2026-2027",
+      "home": "Espanyol",
+      "away": "Getafe",
       "matchday": "Matchday 14"
     }
   ]
